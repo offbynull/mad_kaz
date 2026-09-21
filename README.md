@@ -8,12 +8,6 @@
 
 **Official Entry Description**: Mad Kaz is a vertical platformer where you lead the title character through a series of unique levels, each crazier than the last. Mad Kaz features six zones with between four to ten levels per zone, and eight different game modes.  Built on top of a unique engine, Mad Kaz allows users to create their own levels with customized game play, cinematics, music, and style.  Levels can be uploaded onto phones via either Bluetooth or the Internet.
 
-<img src="mk_0.png" />
-<img src="mk_1.png" width="176" height="205" />
-<img src="mk_2.png" width="176" height="205" />
-<img src="mk_3.png" width="176" height="205" />
-<img src="mk_4.png" width="176" height="205" />
-<img src="mk_5.png" width="176" height="205" />
-<img src="mk_6.png" width="176" height="205" />
+![Screenshot](mk_0.png) ![Screenshot](mk_1.png) ![Screenshot](mk_2.png) ![Screenshot](mk_3.png) ![Screenshot](mk_4.png) ![Screenshot](mk_5.png) ![Screenshot](mk_6.png)
 
 **License:** Public domain.
