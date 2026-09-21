@@ -1,0 +1,115 @@
+#    Copyright 2007 CodeYield Development, Inc.  inquiries@codeyielddevelopment.com
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+.beginreses
+.resstring 0 "Main Menu"
+
+.resstring 10 "Play"
+.resstring 11 "Reset"
+.resstring 12 "Practice"
+.resstring 13 "Custom Maps"
+.resstring 14 "Settings"
+.resstring 15 "Help"
+.resstring 16 "About"
+.resstring 17 "Credits"
+.resstring 18 "Exit"
+
+.resstring 20 "Yes"
+.resstring 21 "No"
+
+.resstring 30 "Climb"
+.resstring 31 "Drop"
+.resstring 32 "Free"
+.resstring 33 "Back"
+
+.resstring 50 "Yes"
+.resstring 51 "No"
+
+.resstring 60 "Yes"
+.resstring 61 "No"
+
+.resstring 70 "Left To Close"
+
+
+.resstring 100 "Quit"
+.resstring 101 "Are you sure you want to quit?"
+
+.resstring 200 "Practice"
+.resstring 201 "What mode would you like to practice in? Choose one or select back to go back to the main menu."
+
+.resstring 400 "Settings"
+.resstring 401 "Would you like to go over the available setting options again? Your previous settings will be cleared."
+
+.resstring 500 "Reset"
+.resstring 501 "If you reset the game, all of your saved progress will be lost. Are you sure you want to reset the game?"
+
+.resstring 600 "Help"
+.resstring 601 ""
+.resstring 602 "[Play]"
+.resstring 603 ""
+.resstring 604 "Allows you to play the game."
+.resstring 605 ""
+.resstring 606 "[Reset]"
+.resstring 607 ""
+.resstring 608 "Resets your progress within the game."
+.resstring 609 ""
+.resstring 610 "[Practice]"
+.resstring 611 ""
+.resstring 612 "Lets you practice with some very basic practice levels."
+.resstring 613 ""
+.resstring 614 "[Custom Maps]"
+.resstring 615 ""
+.resstring 616 "Lets you download new customized maps from either the internet or peer-to-peer bluetooth."
+.resstring 617 ""
+.resstring 618 "[Settings]"
+.resstring 619 ""
+.resstring 620 "Lets you reconfigure the main settings for the game."
+.resstring 621 ""
+.resstring 622 "[Help]"
+.resstring 623 ""
+.resstring 624 "Brings you here."
+.resstring 625 ""
+.resstring 626 "[About]"
+.resstring 627 ""
+.resstring 628 "Gives you details about the game."
+.resstring 629 ""
+.resstring 630 "[Credits]"
+.resstring 631 ""
+.resstring 632 "Shows you details about who did what in the making of this game."
+.resstring 633 ""
+.resstring 634 "[Exit]"
+.resstring 635 ""
+.resstring 636 "Closes the game."
+.resstring 637 ""
+
+.resstring 700 "About"
+.resstring 701 ""
+.resstring 702 "Copyright 2007 CodeYield Development Inc and their contributors. All rights reserved."
+.resstring 703 ""
+.resstring 704 "Visit us at www.codeyielddevelopment.com on the internet."
+.resstring 705 ""
+.resstring 706 "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+
+
+.resdump 20000 "C:\\code\\trunk\\cydMadKaz\\level_scripts\\mainbg.png"
+.resdump 20001 "C:\\code\\trunk\\cydMadKaz\\level_scripts\\mainmenu.png"
+.resdump 20002 "C:\\code\\trunk\\cydMadKaz\\level_scripts\\about.png"
+.resdump 20003 "C:\\code\\trunk\\cydMadKaz\\level_scripts\\helpmenu.png"
+.endreses
+
+.beginfunc main
+.endargs
+.endvars
+.endfunc

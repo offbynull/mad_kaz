@@ -1,0 +1,1028 @@
+#    Copyright 2007 CodeYield Development, Inc.  inquiries@codeyielddevelopment.com
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+.extreq 0
+
+
+.beginreses
+.endreses
+
+
+#########################################################
+######## Apply incoming mode data to first timer ########
+######## --------------------------------------- ########
+########                                         ########
+######## DON'T TOUCH MODE FUNCTIONS UNLESS YOU   ########
+######## WANT A MODE TO DO SOMETHING SPECIFIC    ########
+######## FOR THAT LEVEL!                         ########
+########                                         ########
+######## GFX EFFECTS APPLIED OUTSIDE OF VM SYS!  ########
+#########################################################
+.beginfunc applyMode
+.endargs
+.var sharedHTContainer              string ""
+.var modeString                     string "__mode"
+.var mode                           int 0
+.var LAST_OBJECT                    string ""
+.var LAST_INT_1                     int 0
+.var LAST_INT                       int 0
+.endvars
+OP_POP_OBJECT
+OP_POP_INT
+OP_POP_INT
+
+OP_SYSTEM_SHARED
+OP_ASSIGN_OBJECT v:LAST_OBJECT v:sharedHTContainer
+OP_POP_OBJECT
+
+SUB_OP_ONE_HT_GET v:sharedHTContainer v:modeString
+OP_CONST_INT 0
+OP_SUB_EXTRACT_INT v:LAST_OBJECT v:LAST_INT_1
+OP_ASSIGN_INT v:LAST_INT v:mode
+OP_POP_INT
+OP_POP_INT
+
+
+OP_EQUALS_CONST_INT v:mode 0
+OP_CONTROL_JUMP_CONDITIONAL l:mode0
+OP_EQUALS_CONST_INT v:mode 1
+OP_CONTROL_JUMP_CONDITIONAL l:mode1
+OP_EQUALS_CONST_INT v:mode 2
+OP_CONTROL_JUMP_CONDITIONAL l:mode2
+OP_EQUALS_CONST_INT v:mode 3
+OP_CONTROL_JUMP_CONDITIONAL l:mode3
+OP_EQUALS_CONST_INT v:mode 4
+OP_CONTROL_JUMP_CONDITIONAL l:mode4
+OP_EQUALS_CONST_INT v:mode 5
+OP_CONTROL_JUMP_CONDITIONAL l:mode5
+OP_EQUALS_CONST_INT v:mode 6
+OP_CONTROL_JUMP_CONDITIONAL l:mode6
+OP_EQUALS_CONST_INT v:mode 7
+OP_CONTROL_JUMP_CONDITIONAL l:mode7
+OP_CONTROL_JUMP l:end
+
+.label mode0
+OP_CONTROL_JUMP l:end
+.label mode1
+OP_CONTROL_JUMP l:end
+.label mode2
+OP_CONTROL_JUMP l:end
+.label mode3
+SUB_OP_ONE_GAME_SET_TIMER_STATIC -1 f:fastForwardModeTimerHit 1000 0
+OP_CONTROL_CALL 0 0 0 0 0 0 f:fastForwardModeTimerHit
+OP_CONTROL_JUMP l:end
+.label mode4
+SUB_OP_ONE_GAME_SET_TIMER_STATIC -1 f:timeWarpModeTimerHit 1000 0
+OP_CONTROL_CALL 0 0 0 0 0 0 f:timeWarpModeTimerHit
+OP_CONTROL_JUMP l:end
+.label mode5
+SUB_OP_ONE_GAME_SET_TIMER_STATIC -1 f:superJumpModeTimerHit 1000 0
+OP_CONTROL_CALL 0 0 0 0 0 0 f:superJumpModeTimerHit
+OP_CONTROL_JUMP l:end
+.label mode6
+SUB_OP_ONE_GAME_SET_TIMER_STATIC -1 f:ultraShakeModeTimerHit 1000 0
+OP_CONTROL_CALL 0 0 0 0 0 0 f:ultraShakeModeTimerHit
+OP_CONTROL_JUMP l:end
+.label mode7
+SUB_OP_ONE_GAME_SET_TIMER_STATIC -1 f:psychoticModeTimerHit 500 0
+OP_CONTROL_CALL 0 0 0 0 0 0 f:psychoticModeTimerHit
+OP_CONTROL_JUMP l:end
+
+.label end
+OP_CONTROL_RET
+.endfunc
+
+
+.beginfunc fastForwardModeTimerHit
+.endargs
+.endvars
+SUB_OP_ONE_GAME_GET_PLAYER_X_RATE
+OP_LESS_THAN_CONST_INT 0 0
+OP_CONTROL_JUMP_CONDITIONAL l:neg
+OP_CONTROL_JUMP l:pos
+
+.label neg
+SUB_OP_ONE_GAME_SET_PLAYER_X_RATE_STATIC -1 10
+OP_CONTROL_JUMP l:end
+
+.label pos
+SUB_OP_ONE_GAME_SET_PLAYER_X_RATE_STATIC 1 10
+OP_CONTROL_JUMP l:end
+
+.label end
+OP_CONTROL_RET
+.endfunc
+
+.beginfunc timeWarpModeTimerHit
+.endargs
+.endvars
+SUB_OP_ONE_GAME_SET_SLOWDOWN_RATE_STATIC 0
+
+SUB_OP_ONE_GAME_RAND_MAX_STATIC 3
+OP_EQUALS_CONST_INT 0 0
+OP_CONTROL_JUMP_CONDITIONAL l:timeflux
+OP_EQUALS_CONST_INT 0 1
+OP_CONTROL_JUMP_CONDITIONAL l:warpX
+OP_EQUALS_CONST_INT 0 2
+OP_CONTROL_JUMP_CONDITIONAL l:speedChange
+
+## flux
+
+.label timeflux
+SUB_OP_ONE_GAME_RAND_MAX_STATIC 3       # 1
+SUB_OP_ONE_GAME_SET_SLOWDOWN_RATE 1
+OP_CONTROL_JUMP l:end
+
+## warpX
+
+.label warpX
+SUB_OP_ONE_GAME_GET_PLAYER_X_POS    # 1
+SUB_OP_ONE_GAME_RAND_MAX_STATIC 80  # 2
+OP_SUBTRACT_CONST_INT 2 40          # 3
+OP_ADDITION_INT 1 3                 # 4
+SUB_OP_ONE_GAME_SET_PLAYER_X_POS 4
+OP_CONTROL_JUMP l:end
+
+## speedChange
+
+.label speedChange
+SUB_OP_ONE_GAME_GET_PLAYER_X_RATE       # 1 2
+OP_LESS_THAN_CONST_INT 1 0
+OP_CONTROL_JUMP_CONDITIONAL l:speedChange_neg
+
+.label speedChange_pos
+SUB_OP_ONE_GAME_SET_PLAYER_X_RATE_STATIC -1 23
+OP_CONTROL_JUMP l:end
+
+.label speedChange_neg
+SUB_OP_ONE_GAME_SET_PLAYER_X_RATE_STATIC 1 23
+OP_CONTROL_JUMP l:end
+
+.label end
+OP_CONTROL_RET
+.endfunc
+
+.beginfunc superJumpModeTimerHit
+.endargs
+.endvars
+SUB_OP_ONE_GAME_SET_POWER_STATIC hx:700
+OP_CONTROL_RET
+.endfunc
+
+.beginfunc ultraShakeModeTimerHit
+.endargs
+.endvars
+SUB_OP_ONE_GAME_RAND_MAX_STATIC 30
+SUB_OP_ONE_GAME_SET_SHAKE 0
+OP_CONTROL_RET
+.endfunc
+
+.beginfunc psychoticModeTimerHit
+.endargs
+.endvars
+SUB_OP_ONE_GAME_WHITE_OUT_STATIC -1
+SUB_OP_ONE_GAME_SET_SHAKE_STATIC 0
+SUB_OP_ONE_GAME_SET_SLOWDOWN_RATE_STATIC 0
+
+# power modder
+
+.label powerModder
+SUB_OP_ONE_GAME_RAND_MAX_STATIC hx:27f       # 1
+SUB_OP_ONE_GAME_SET_POWER 0
+OP_POP_INT
+
+.label shake
+SUB_OP_ONE_GAME_RAND_MAX_STATIC 15
+SUB_OP_ONE_GAME_SET_SHAKE 0
+OP_POP_INT
+
+SUB_OP_ONE_GAME_RAND_MAX_STATIC 6
+OP_EQUALS_CONST_INT 0 0
+OP_CONTROL_JUMP_CONDITIONAL l:whiteOut
+OP_EQUALS_CONST_INT 0 1
+OP_CONTROL_JUMP_CONDITIONAL l:timeflux
+OP_EQUALS_CONST_INT 0 2
+OP_CONTROL_JUMP_CONDITIONAL l:blackOut
+OP_EQUALS_CONST_INT 0 3
+OP_CONTROL_JUMP_CONDITIONAL l:warpX
+OP_EQUALS_CONST_INT 0 4
+OP_CONTROL_JUMP_CONDITIONAL l:changeDirection
+OP_EQUALS_CONST_INT 0 5
+OP_CONTROL_JUMP_CONDITIONAL l:changeSpeed
+
+# whiteOut
+
+.label whiteOut
+SUB_OP_ONE_GAME_WHITE_OUT_STATIC hx:00FFFFFF
+OP_CONTROL_JUMP l:end
+
+## flux
+
+.label timeflux
+SUB_OP_ONE_GAME_RAND_MAX_STATIC 3       # 1
+SUB_OP_ONE_GAME_SET_SLOWDOWN_RATE 1
+OP_CONTROL_JUMP l:end
+
+## warpX
+
+.label warpX
+SUB_OP_ONE_GAME_GET_PLAYER_X_POS    # 1
+SUB_OP_ONE_GAME_RAND_MAX_STATIC 80  # 2
+OP_SUBTRACT_CONST_INT 2 40          # 3
+OP_ADDITION_INT 1 3                 # 4
+SUB_OP_ONE_GAME_SET_PLAYER_X_POS 4
+OP_CONTROL_JUMP l:end
+
+## blackOut
+
+.label blackOut
+SUB_OP_ONE_GAME_WHITE_OUT_STATIC hx:00000000
+OP_CONTROL_JUMP l:end
+
+## changeDirection
+
+.label changeDirection
+SUB_OP_ONE_GAME_GET_PLAYER_X_RATE       # 1 2
+OP_LESS_THAN_CONST_INT 1 0
+OP_CONTROL_JUMP_CONDITIONAL l:changeDirection_neg
+
+.label changeDirection_pos
+SUB_OP_ONE_GAME_SET_PLAYER_X_RATE_STATIC -1 23
+OP_CONTROL_JUMP l:end
+
+.label changeDirection_neg
+SUB_OP_ONE_GAME_SET_PLAYER_X_RATE_STATIC 1 23
+OP_CONTROL_JUMP l:end
+
+## changeSpeed
+
+.label changeSpeed
+SUB_OP_ONE_GAME_GET_PLAYER_X_RATE       # 1 2
+OP_LESS_THAN_CONST_INT 1 0
+OP_CONTROL_JUMP_CONDITIONAL l:changeSpeed_neg
+
+.label changeSpeed_pos
+SUB_OP_ONE_GAME_RAND_MAX_STATIC 15   # 3
+OP_CONST_INT -1                      # 4
+OP_ADDITION_CONST_INT 3 8            # 5
+SUB_OP_ONE_GAME_SET_PLAYER_X_RATE 4 5
+OP_CONTROL_JUMP l:end
+
+.label changeSpeed_neg
+SUB_OP_ONE_GAME_RAND_MAX_STATIC 15   # 3
+OP_CONST_INT -1                      # 4
+OP_ADDITION_CONST_INT 3 8            # 5
+SUB_OP_ONE_GAME_SET_PLAYER_X_RATE 4 5
+OP_CONTROL_JUMP l:end
+
+.label end
+OP_CONTROL_RET
+.endfunc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##################################################
+########                                  ########
+########     START EDITTING FROM HERE     ########
+########                                  ########
+##################################################
+
+
+
+.beginreses
+.resout     500 000000010000000100000000
+.resout     600 000000010000000100000500
+.resout     700 0000000000000000
+.resout     701 00000500
+.endreses
+
+
+
+#############################
+######## Scene setup ########
+#############################
+.beginfunc sceneGraphicsSetup
+.endargs
+.endvars
+
+### resize db
+
+OP_CONST_INT 1
+OP_CONST_INT 1
+OP_CONST_INT 2
+OP_CONST_INT 1
+SUB_OP_ONE_GAME_SCENE_RESIZE_DB 3 2 1 0
+OP_MULTI_POP_INT 4
+
+
+
+
+### load interpolators
+
+OP_CONST_SHORT 700
+OP_CONST_SHORT 701
+OP_CONST_INT 0
+OP_CONST_INT 1
+OP_CONST_INT 0
+OP_CONTROL_CALL 0 2 3 0 0 0 f:loadNewInterpolatorFromRes
+
+
+
+### load up images
+
+OP_CONST_INT 0
+OP_CONST_STRING "JAR_RES:/z0_shared.script:0::0:"
+SUB_OP_ONE_GAME_SCENE_LOAD_NEW_IMAGE 0 0
+OP_POP_OBJECT
+OP_POP_INT
+
+
+
+
+### load up sequences
+
+OP_CONST_SHORT 500
+OP_CONST_INT 0
+OP_CONTROL_CALL 0 1 1 0 0 0 f:loadNewSequenceFromRes
+
+OP_CONST_SHORT 600
+OP_CONST_INT 1
+OP_CONTROL_CALL 0 1 1 0 0 0 f:loadNewSequenceFromRes
+
+
+
+### load sprite
+
+OP_CONST_INT 0
+OP_CONST_INT 0
+OP_CONST_INT 40
+OP_CONST_INT 40
+OP_CONST_INT 0
+OP_CONST_INT 1
+SUB_OP_ONE_GAME_SCENE_LOAD_NEW_SPRITE 5 4 3 2 1 0
+OP_MULTI_POP_INT 6
+
+
+
+### load layers
+
+OP_CONST_INT 0
+OP_CONST_INT 1 
+SUB_OP_ONE_GAME_SCENE_RESIZE_LAYER 1 0
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 0
+OP_CONST_INT 0
+OP_CONST_INT 5
+SUB_OP_ONE_GAME_SCENE_RESIZE_LAYER_ITEMS 2 1 0
+OP_MULTI_POP_INT 3
+
+OP_CONST_INT 0
+OP_CONST_INT 0
+OP_CONST_INT 0
+OP_CONST_INT 0
+OP_CONST_INT 5
+OP_CONST_INT 40
+OP_CONST_INT 10
+OP_CONTROL_CALL 0 0 7 0 0 0 f:setLinkedParallaxLayerLoop
+
+### load layer items
+
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 0 3 0 0 0
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 0 2 0 0 0
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 0 1 0 0 0
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 0 0 0 0 0
+
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 0  3 1 0 0
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 40 2 1 0 0
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 0  1 1 0 0
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 0  0 1 0 0
+
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 0  3 2 0 0
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 80 2 2 0 0
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 0  1 2 0 0
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 0  0 2 0 0
+
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 0   3 3 0 0
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 120 2 3 0 0
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 0   1 3 0 0
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 0   0 3 0 0
+
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 0   3 4 0 0
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 160 2 4 0 0
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 0   1 4 0 0
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC 0   0 4 0 0
+
+OP_CONTROL_RET 
+.endfunc
+
+
+.beginfunc setNoneLayer
+.arg setIndex          int
+.arg layerIndex        int
+.endargs
+.var pos               int 0
+.var data              int 0
+.endvars
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 0
+OP_CONST_INT 0
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:data v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 3
+OP_CONST_INT 1
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:data v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONTROL_RET
+.endfunc
+
+.beginfunc setStaticLayer
+.arg setIndex          int
+.arg layerIndex        int
+.arg transX            int
+.arg transY            int
+.endargs
+.var pos               int 0
+.var data              int 0
+.endvars
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 0
+OP_CONST_INT 1
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:data v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 1
+OP_CONST_INT 0 # unused
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:transX v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 2
+OP_CONST_INT 0 # unused
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:transY v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 3
+OP_CONST_INT 1
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:data v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONTROL_RET
+.endfunc
+
+.beginfunc setScrollLayer
+.arg setIndex          int
+.arg layerIndex        int
+.arg transX            int
+.arg transY            int
+.arg xRate             int
+.arg yRate             int
+.endargs
+.var pos               int 0
+.var data              int 0
+.endvars
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 0
+OP_CONST_INT 2
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:data v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 1
+OP_CONST_INT 0 # unused
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:transX v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 2
+OP_CONST_INT 0 # unused
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:transY v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 3
+OP_CONST_INT 1
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:data v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 4
+OP_CONST_INT 0
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:data v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 5
+OP_CONST_INT 0
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:data v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 6
+OP_CONST_INT 0 # unused
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:xRate v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 7
+OP_CONST_INT 0 # unused
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:yRate v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 8
+OP_CONST_INT 0
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:data v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 9
+OP_CONST_INT 0
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:data v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONTROL_RET
+.endfunc
+
+.beginfunc setLinkedParallaxLayer
+.arg setIndex          int
+.arg layerIndex        int
+.arg transX            int
+.arg transY            int
+.arg slowDownRate      int
+.endargs
+.var pos               int 0
+.var data              int 0
+.endvars
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 0
+OP_CONST_INT 3
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:data v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 1
+OP_CONST_INT 0 # unused
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:transX v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 2
+OP_CONST_INT 0 # unused
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:transY v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 3
+OP_CONST_INT 1
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:data v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 4
+OP_CONST_INT 0 # unused
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:slowDownRate v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 5
+OP_CONST_INT 0
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:data v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONTROL_RET
+.endfunc
+
+.beginfunc setLinkedParallaxLayerLoop
+.arg setIndex          int
+.arg layerIndex        int
+.arg transX            int
+.arg transY            int
+.arg slowDownRate      int
+.arg loopLength        int
+.arg repeatCount       int
+.endargs
+.var pos               int 0
+.var data              int 0
+.endvars
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 0
+OP_CONST_INT 4
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:data v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 1
+OP_CONST_INT 0 # unused
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:transX v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 2
+OP_CONST_INT 0 # unused
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:transY v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 3
+OP_CONST_INT 1
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:data v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 4
+OP_CONST_INT 0 # unused
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:slowDownRate v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 5
+OP_CONST_INT 0
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:data v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 6
+OP_CONST_INT 0 # unused
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:loopLength v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONST_INT 7
+OP_CONST_INT 0 # unused
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM v:repeatCount v:pos v:layerIndex v:setIndex
+OP_MULTI_POP_INT 2
+
+OP_CONTROL_RET
+.endfunc
+
+.beginfunc loadNewInterpolatorFromRes
+.arg xyResId          short
+.arg timeResId        short
+.arg loadPos          int
+.arg repeat           int
+.arg smoothInt        int
+.endargs
+.endvars
+OP_SYSTEM_DIRECT_LOAD_RES_POSITION 0                # 0obj  = barray
+OP_SIZE_OF 0                                        # 3int  = barray size
+OP_DIVIDE_CONST_INT 3 4                             # 4int  = iarray size
+OP_CONST_INT 0                                      # 5int  = start offset
+SUB_OP_ONE_ARRAY_BYTE_TO_INT 4 5 0                  # 1obj  = iarray
+OP_ASSIGN_OBJECT 1 0
+OP_POP_OBJECT
+OP_MULTI_POP_INT 3
+
+OP_SYSTEM_DIRECT_LOAD_RES_POSITION 1                # 1obj  = barray
+OP_SIZE_OF 1                                        # 3int  = barray size
+OP_DIVIDE_CONST_INT 3 4                             # 4int  = iarray size
+OP_CONST_INT 0                                      # 5int  = start offset
+SUB_OP_ONE_ARRAY_BYTE_TO_INT 4 5 1                  # 2obj  = iarray
+OP_ASSIGN_OBJECT 2 1
+OP_POP_OBJECT
+OP_MULTI_POP_INT 3
+
+SUB_OP_ONE_GAME_SCENE_LOAD_NEW_INTERPOLATION_POINTS v:smoothInt v:repeat 1 0 v:loadPos
+
+OP_CONTROL_RET
+.endfunc
+
+
+.beginfunc loadNewSequenceFromRes
+.arg resId            short
+.arg loadPos          int
+.endargs
+.endvars
+OP_SYSTEM_DIRECT_LOAD_RES_POSITION 0                # 0obj  = barray
+OP_SIZE_OF 0                                        # 1int  = barray size
+OP_DIVIDE_CONST_INT 1 4                             # 2int  = iarray size
+OP_CONST_INT 0                                      # 3int  = start offset
+SUB_OP_ONE_ARRAY_BYTE_TO_INT 2 3 0                  # 1obj  = iarray
+SUB_OP_ONE_GAME_SCENE_LOAD_NEW_SEQUENCE 1 0
+OP_CONTROL_RET
+.endfunc
+
+
+
+####################################
+######## Post process setup ########
+####################################
+.beginfunc postProcessSetup
+.endargs
+.endvars
+OP_CONTROL_CALL 0 0 0 0 0 0 f:applyMode
+
+SUB_OP_ONE_GAME_SET_GAME_FLAGS_STATIC hx:00000002
+SUB_OP_ONE_GAME_SET_GAME_FLAGS_2_STATIC hx:0000003F
+SUB_OP_ONE_GAME_SET_PLAYER_Y_POS_STATIC 50
+SUB_OP_ONE_GAME_ON_DIE_STATIC f:onDie
+
+OP_CONST_STRING "JAR:/road warrior.mid"
+OP_CONTROL_CALL 0 0 0 0 1 0 f:playMusic
+
+OP_CONTROL_RET
+.endfunc
+
+.beginfunc playMusic
+.arg name             string
+.endargs
+.endvars
+SUB_OP_ONE_GAME_LOAD_FROM_JAR 0
+OP_SIZE_OF 1
+OP_CONST_INT 0
+SUB_OP_ONE_GAME_NEW_MIDI 0 1 1
+SUB_OP_ONE_GAME_START_MIDI
+OP_CONTROL_RET
+.endfunc
+
+.beginfunc onDie
+.endargs
+.endvars
+SUB_OP_ONE_GAME_SET_RET_STATIC 2    # passed
+SUB_OP_ONE_GAME_SET_STATE_STATIC 3  # game finished
+OP_CONTROL_RET
+.endfunc
+
+
+
+
+
+
+
+
+#########################################################
+######## Entry point                             ########
+######## -----------                             ########
+######## - Fill in stack lengths for all other   ########
+########   calls                                 ########
+######## - Add in basic images                   ########
+######## - Add in maximum timer count            ########
+######## - Add in basic image properties         ########
+######## - Add in map data                       ########
+######## - Add in post/scene setup addresses     ########
+########                                         ########
+#########################################################
+.beginfunc main
+.endargs
+.var zeroItem                       int 0
+.var imageIdString                  string "imageIds"
+.var mapDataString                  string "mapData"
+.var maxTimersString                string "maxTimers"
+.var stackLengthsString             string "stackLengths"
+.var spriteFrameWidthString         string "spriteFrameWidth"
+.var postSetupEntryPointString      string "postSetupEntryPoint"
+.var sceneSetupEntryPointString     string "sceneSetupEntryPoint"
+.var sharedHTContainer              string ""
+.var imageIdsArray                  string ""
+.var mapDataArray                   string ""
+.var maxTimersArray                 string ""
+.var stackLengthsArray              string ""
+.var postSetupEntryPointArray       string ""
+.var sceneSetupEntryPointArray      string ""
+.var spriteFrameWidthArray          string ""
+.var singleCount                    int 1
+.var timerCounter                   int 0
+.var LAST_OBJECT                    string ""
+.var LAST_INT                       int 0
+.var LAST_LONG                      long 0
+.endvars
+
+### LAST_* should be invalid after this
+OP_POP_OBJECT
+OP_POP_INT
+OP_POP_LONG
+
+### move shared into setup var
+OP_SYSTEM_SHARED
+OP_ASSIGN_OBJECT v:LAST_OBJECT v:sharedHTContainer
+OP_POP_OBJECT
+
+### setup timers
+OP_CONST_INT     1
+OP_NEW_INT_ARRAY v:LAST_INT
+OP_POP_INT
+
+OP_CONST_INT     5   ### timer numbers
+OP_SUB_ASSIGN_INT v:LAST_OBJECT v:LAST_INT v:timerCounter
+OP_POP_INT
+OP_INC_INT v:timerCounter 1
+
+OP_ASSIGN_OBJECT v:LAST_OBJECT v:maxTimersArray
+OP_POP_OBJECT
+
+# load stack lengths
+OP_CONTROL_CALL 0 0 0 0 0 0 f:loadStackLengths
+OP_GET_RET 4
+OP_ASSIGN_OBJECT v:LAST_OBJECT v:stackLengthsArray
+OP_POP_OBJECT
+
+# post process func
+OP_NEW_INT_ARRAY v:singleCount
+OP_ASSIGN_OBJECT v:LAST_OBJECT v:postSetupEntryPointArray
+OP_POP_OBJECT
+
+OP_CONST_INT f:postProcessSetup
+OP_SUB_ASSIGN_INT v:postSetupEntryPointArray v:LAST_INT v:zeroItem
+OP_POP_INT
+
+# scene setup func
+OP_NEW_INT_ARRAY v:singleCount
+OP_ASSIGN_OBJECT v:LAST_OBJECT v:sceneSetupEntryPointArray
+OP_POP_OBJECT
+
+OP_CONST_INT f:sceneGraphicsSetup
+OP_SUB_ASSIGN_INT v:sceneSetupEntryPointArray v:LAST_INT v:zeroItem
+OP_POP_INT
+
+# block image data
+OP_CONTROL_CALL 0 0 0 0 0 0 f:loadMainImages
+OP_GET_RET 4
+OP_ASSIGN_OBJECT v:LAST_OBJECT v:imageIdsArray
+OP_POP_OBJECT
+
+# load map data
+OP_CONTROL_CALL 0 0 0 0 0 0 f:loadMapData
+OP_GET_RET 4
+OP_ASSIGN_OBJECT v:LAST_OBJECT v:mapDataArray
+OP_POP_OBJECT
+
+# shared hash fill
+SUB_OP_ONE_HT_PUT v:sharedHTContainer v:imageIdString v:imageIdsArray
+SUB_OP_ONE_HT_PUT v:sharedHTContainer v:mapDataString v:mapDataArray
+SUB_OP_ONE_HT_PUT v:sharedHTContainer v:maxTimersString v:maxTimersArray
+SUB_OP_ONE_HT_PUT v:sharedHTContainer v:stackLengthsString v:stackLengthsArray
+SUB_OP_ONE_HT_PUT v:sharedHTContainer v:postSetupEntryPointString v:postSetupEntryPointArray
+SUB_OP_ONE_HT_PUT v:sharedHTContainer v:sceneSetupEntryPointString v:sceneSetupEntryPointArray
+
+
+
+OP_CONTROL_RET
+.endfunc
+
+
+.beginfunc loadMainImages
+.endargs
+.var imageIdCounter                 int 0
+.var imageIdCount                   int 17
+.var imageIdsArray                  string ""
+.var LAST_OBJECT                    string ""
+.endvars
+OP_POP_OBJECT
+
+OP_NEW_OBJECT_ARRAY v:imageIdCount
+OP_ASSIGN_OBJECT v:LAST_OBJECT v:imageIdsArray
+OP_POP_OBJECT
+
+OP_CONST_STRING "JAR:/kazwalk.png::1:"
+OP_SUB_ASSIGN_OBJECT v:imageIdsArray v:LAST_OBJECT v:imageIdCounter
+OP_INC_INT v:imageIdCounter 1
+OP_POP_OBJECT
+
+OP_CONST_STRING "JAR:/block1.png::1:"
+OP_SUB_ASSIGN_OBJECT v:imageIdsArray v:LAST_OBJECT v:imageIdCounter
+OP_INC_INT v:imageIdCounter 1
+OP_POP_OBJECT
+
+OP_SET_RET 4 v:imageIdsArray
+OP_CONTROL_RET
+.endfunc
+
+.beginfunc loadStackLengths
+.endargs
+.var stackLengthCounter             int 0
+.var tempInt                        int 0
+.var stackLengthsArray              string ""
+.endvars
+OP_POP_INT
+OP_POP_OBJECT
+
+OP_CONST_INT     8
+OP_NEW_INT_ARRAY v:tempInt
+OP_POP_INT
+
+OP_CONST_INT     64
+OP_SUB_ASSIGN_INT v:stackLengthsArray v:tempInt v:stackLengthCounter
+OP_POP_INT
+OP_INC_INT v:stackLengthCounter 1
+
+OP_CONST_INT     64
+OP_SUB_ASSIGN_INT v:stackLengthsArray v:tempInt v:stackLengthCounter
+OP_POP_INT
+OP_INC_INT v:stackLengthCounter 1
+
+OP_CONST_INT     64
+OP_SUB_ASSIGN_INT v:stackLengthsArray v:tempInt v:stackLengthCounter
+OP_POP_INT
+OP_INC_INT v:stackLengthCounter 1
+
+OP_CONST_INT     64
+OP_SUB_ASSIGN_INT v:stackLengthsArray v:tempInt v:stackLengthCounter
+OP_POP_INT
+OP_INC_INT v:stackLengthCounter 1
+
+OP_CONST_INT     64
+OP_SUB_ASSIGN_INT v:stackLengthsArray v:tempInt v:stackLengthCounter
+OP_POP_INT
+OP_INC_INT v:stackLengthCounter 1
+
+OP_CONST_INT     64
+OP_SUB_ASSIGN_INT v:stackLengthsArray v:tempInt v:stackLengthCounter
+OP_POP_INT
+OP_INC_INT v:stackLengthCounter 1
+
+OP_CONST_INT     64
+OP_SUB_ASSIGN_INT v:stackLengthsArray v:tempInt v:stackLengthCounter
+OP_POP_INT
+OP_INC_INT v:stackLengthCounter 1
+
+OP_CONST_INT     64
+OP_SUB_ASSIGN_INT v:stackLengthsArray v:tempInt v:stackLengthCounter
+OP_POP_INT
+OP_INC_INT v:stackLengthCounter 1
+
+OP_SET_RET 4 v:stackLengthsArray
+OP_CONTROL_RET
+.endfunc
+
+.beginfunc loadMapData
+.endargs
+.var mapFloorCount                  int 200
+.var floorCounter                   int 0
+.var floorNew                       int hx:00000001
+.var floorEmpty                     int hx:00000000
+.var randShifter                    int 0
+.var mapDataArray                   string ""
+.var LAST_OBJECT                    string ""
+.var LAST_INT                       int 0
+.var LAST_LONG                      long 0
+.endvars
+
+### LAST_* should be invalid after this
+OP_POP_OBJECT
+OP_POP_INT
+OP_POP_LONG
+
+OP_NEW_INT_ARRAY v:mapFloorCount
+OP_ASSIGN_OBJECT v:LAST_OBJECT v:mapDataArray
+OP_POP_OBJECT
+
+# set seed
+OP_SYSTEM_TIME
+OP_CONV_LONG_TO_INT v:LAST_LONG
+OP_POP_LONG
+SUB_OP_ONE_GAME_RAND_SEED v:LAST_INT
+OP_POP_INT
+
+# initalize counter to 2
+OP_PLACE_CONST_INT v:floorCounter 0
+
+.label whileLessThan199
+OP_GREATER_THAN_CONST_INT v:floorCounter 199
+OP_CONTROL_JUMP_CONDITIONAL l:whileLessThan199End
+
+# create random shift amount
+SUB_OP_ONE_GAME_RAND_MAX_STATIC 8
+OP_ASSIGN_INT v:LAST_INT v:randShifter
+OP_POP_INT
+
+OP_MULTIPLY_CONST_INT v:randShifter hx:FFFFFFFC
+OP_ASSIGN_INT v:LAST_INT v:randShifter
+OP_POP_INT
+OP_CONTROL_JUMP l:done
+
+.label done
+
+# apply shift and place
+OP_SHIFT_LEFT_INT v:randShifter v:floorNew
+OP_SUB_ASSIGN_INT v:mapDataArray v:LAST_INT v:floorCounter
+OP_POP_INT
+
+# move up floor counter for next iteration
+OP_INC_INT v:floorCounter 2
+
+OP_CONTROL_JUMP l:whileLessThan199
+.label whileLessThan199End
+
+OP_SET_RET 4 v:mapDataArray
+OP_CONTROL_RET
+.endfunc

@@ -1,0 +1,76 @@
+#    Copyright 2007 CodeYield Development, Inc.  inquiries@codeyielddevelopment.com
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+.beginreses
+.resstring 100 "Disclaimer"
+.resstring 101 "These are third-party maps created by third-party developers that are in no way related to CodeYield Development, their partners, and their contributors. The maps have not been screened by anyone before being posted up. Proceed forward at your own discretion. If you want to continue forward select Agree, otherwise select Disagree."
+.resstring 102 "Agree"
+.resstring 103 "Disagree"
+
+.resstring 200 "Custom Maps"
+.resstring 201 "Browse Maps"
+.resstring 202 "Share Maps"
+.resstring 203 "Create Map"
+.resstring 204 "Help"
+.resstring 205 "Back"
+
+.resstring 300 "Create Map"
+.resstring 301 "Left to go back"
+.resstring 302 ""
+.resstring 303 "Making your own custom maps is easy."
+.resstring 304 ""
+.resstring 305 "First go check out http://www.codeyielddevelopment.com to find out about the tools you need to create your own custom maps!"
+.resstring 306 ""
+.resstring 307 "Once you create a new map, you can make it available online for yourself and others to download! Some programming knowledge is required!"
+
+.resstring 400 "Help"
+.resstring 401 "Left to go back"
+.resstring 402 ""
+.resstring 403 "[Browse Maps]"
+.resstring 404 ""
+.resstring 405 "Going to the browse maps section allows you to browse through maps that you have downloaded. In this section you can choose to remove, play, or look at the details of a given map."
+.resstring 406 ""
+.resstring 407 "[Get Maps]"
+.resstring 408 ""
+.resstring 409 "Going here will allow you to download new maps."
+.resstring 410 ""
+.resstring 411 "Accessing new maps is and will always be free, however you will be subject to standard data usage rates set by your carrier. Make sure to check with your carrier before going into this section."
+.resstring 412 ""
+.resstring 413 "[Create Map]"
+.resstring 414 ""
+.resstring 415 "Gives you details about where you need to go to create new maps."
+.resstring 416 ""
+.resstring 417 "[Help]"
+.resstring 418 ""
+.resstring 419 "You are viewing the help section now."
+.resstring 420 ""
+.resstring 421 "[Back]"
+.resstring 422 ""
+.resstring 423 "Will take you back to the main menu."
+
+.resstring 500 "Share Maps"
+.resstring 501 "You can either download maps directly from the CYD website on the internet, or from your people around your immediate area using bluetooth."
+.resstring 502 "Internet"
+.resstring 503 "Bluetooth P2P"
+.resstring 504 "Back"
+
+.resstring 600 "Browse Maps"
+.resstring 601 "Back"
+.endreses
+
+.beginfunc main
+.endargs
+.endvars
+.endfunc

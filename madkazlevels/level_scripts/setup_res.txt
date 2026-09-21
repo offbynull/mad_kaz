@@ -1,0 +1,38 @@
+#    Copyright 2007 CodeYield Development, Inc.  inquiries@codeyielddevelopment.com
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+.beginreses
+.resstring 0 "Ok"
+.resstring 1 "Yes"
+.resstring 2 "No"
+.resstring 3 "Back"
+
+.resstring 100 "READ ME FIRST!!!"
+.resstring 101 "Use up and down to navigate between menu items. Use the 7 key to select a menu item."
+    
+.resstring 200 "1. Music?"
+.resstring 201 "If you experience slow, choppy, or strange game play behaviour, turn this option off. Turning this option off means that you won't hear any music at all. You can also toggle music on and off for a specific level through the pause menu while playing."
+    
+.resstring 300 "2. Bilineaer scaling?"
+.resstring 301 "Some graphics within the game may need to be scaled. Using bilinear scaling means that the graphics will be smoother, but the loading time will be slightly longer."
+    
+.resstring 400 "3. Save settings?"
+.resstring 401 "Saving settings means that you won't be asked any of these questions the next time you start the game."
+.endreses
+
+.beginfunc main
+.endargs
+.endvars
+.endfunc

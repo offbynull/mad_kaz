@@ -1,0 +1,14 @@
+Function: main = 1327 (52f) 
+Entry point adjusted
+Start convert
+End convert
+Adjusting labels for function
+Adjusting function calls
+Header start offset: 0
+Header size offset: 16
+Extension start offset: 16
+Extension size offset: 1
+Resource start offset: 17
+Resource size offset: 1306
+Function start offset: 1323
+Function size offset: 4

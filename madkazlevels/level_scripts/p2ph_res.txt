@@ -1,0 +1,69 @@
+#    Copyright 2007 CodeYield Development, Inc.  inquiries@codeyielddevelopment.com
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+.beginreses
+.resstring 100 "Share Maps"
+.resstring 101 "Server"
+.resstring 102 "Client"
+.resstring 103 "Help"
+.resstring 104 "Back"
+
+.resstring 200 "Searching"
+.resstring 201 "Searching for devices running a server. Please wait..."
+.resstring 202 "There were no hosts found in your area! Try again later."
+.resstring 203 "Left to go back"
+
+.resstring 300 "Server List"
+.resstring 301 "Back"
+
+.resstring 400 "Waiting"
+.resstring 401 "Left to stop hosting"
+.resstring 402 "Players will automatically be able to browse your catalog of stored levels and download them at will once they join..."
+
+.resstring 500 "Help"
+.resstring 501 "Left to close"
+.resstring 502 ""
+.resstring 503 "[Server]"
+.resstring 504 ""
+.resstring 505 "Use server mode to share your downloaded maps with other people in your immediate area."
+.resstring 506 ""
+.resstring 507 "[Client]"
+.resstring 508 ""
+.resstring 509 "Use client mode to browse for shared maps from others in your immediate area."
+
+.resstring 600 "Unreachable"
+.resstring 601 "Unable to connect to host"
+.resstring 602 "Back"
+
+.resstring 700 "Level List"
+.resstring 701 "Back"
+
+.resstring 800 "Unable to store"
+.resstring 801 "Either you're out of memory or a level with this name already exists on the phone. Try deleting a level with this name or deleting some other downloaded levels, and try again."
+.resstring 802 "Back"
+
+.resstring 900 "Successfully stored"
+.resstring 901 "Download and storage successful! You can now access this map! You can access custom maps by going to the main menu, selecting the custom maps option, and then selecting the browse maps option!"
+.resstring 902 "Back"
+
+
+.resstring 22000 "57eb4d03cd40430da78f8d76d80b240b"
+
+.endreses
+
+.beginfunc main
+.endargs
+.endvars
+.endfunc

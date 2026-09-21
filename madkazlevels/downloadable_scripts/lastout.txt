@@ -1,0 +1,552 @@
+Function: loadNewSequenceFromRes = 1025 (401) 
+Start convert
+OP_SYSTEM_DIRECT_LOAD_RES_POSITION offset: 4
+OP_SIZE_OF offset: 8
+OP_DIVIDE_CONST_INT offset: 12
+OP_CONST_INT offset: 19
+SUB_OP_ONE_ARRAY_BYTE_TO_INT offset: 24
+SUB_OP_ONE_GAME_SCENE_LOAD_NEW_SEQUENCE offset: 32
+OP_CONTROL_RET offset: 38
+End convert
+Adjusting labels for function
+Function: loadBlockFrameHeights = 1060 (424) 
+Start convert
+OP_CONST_INT offset: 39
+OP_CONST_INT offset: 44
+OP_CONST_STRING offset: 49
+OP_CONST_INT offset: 52
+OP_POP_INT offset: 57
+OP_POP_OBJECT offset: 58
+OP_NEW_INT_ARRAY offset: 59
+OP_CONST_INT offset: 63
+OP_SUB_ASSIGN_INT offset: 68
+OP_INC_INT offset: 76
+OP_POP_INT offset: 80
+OP_SET_RET offset: 81
+OP_CONTROL_RET offset: 86
+End convert
+Adjusting labels for function
+Function: loadMainImages = 1108 (454) 
+Start convert
+OP_CONST_INT offset: 87
+OP_CONST_INT offset: 92
+OP_CONST_STRING offset: 97
+OP_CONST_STRING offset: 100
+OP_POP_OBJECT offset: 103
+OP_NEW_OBJECT_ARRAY offset: 104
+OP_ASSIGN_OBJECT offset: 108
+OP_POP_OBJECT offset: 113
+OP_CONST_STRING offset: 114
+OP_SUB_ASSIGN_OBJECT offset: 137
+OP_INC_INT offset: 145
+OP_POP_OBJECT offset: 149
+OP_CONST_STRING offset: 150
+OP_SUB_ASSIGN_OBJECT offset: 164
+OP_INC_INT offset: 172
+OP_POP_OBJECT offset: 176
+OP_SET_RET offset: 177
+OP_CONTROL_RET offset: 182
+End convert
+Adjusting labels for function
+Function: setLinkedParallaxLayerLoop = 1204 (4b4) 
+Start convert
+OP_CONST_INT offset: 183
+OP_CONST_INT offset: 188
+OP_MULTI_POP_INT offset: 193
+OP_CONST_INT offset: 196
+OP_CONST_INT offset: 201
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 206
+OP_MULTI_POP_INT offset: 216
+OP_CONST_INT offset: 219
+OP_CONST_INT offset: 224
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 229
+OP_MULTI_POP_INT offset: 239
+OP_CONST_INT offset: 242
+OP_CONST_INT offset: 247
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 252
+OP_MULTI_POP_INT offset: 262
+OP_CONST_INT offset: 265
+OP_CONST_INT offset: 270
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 275
+OP_MULTI_POP_INT offset: 285
+OP_CONST_INT offset: 288
+OP_CONST_INT offset: 293
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 298
+OP_MULTI_POP_INT offset: 308
+OP_CONST_INT offset: 311
+OP_CONST_INT offset: 316
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 321
+OP_MULTI_POP_INT offset: 331
+OP_CONST_INT offset: 334
+OP_CONST_INT offset: 339
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 344
+OP_MULTI_POP_INT offset: 354
+OP_CONST_INT offset: 357
+OP_CONST_INT offset: 362
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 367
+OP_MULTI_POP_INT offset: 377
+OP_CONTROL_RET offset: 380
+End convert
+Adjusting labels for function
+Function: sceneGraphicsSetup = 1402 (57a) 
+Start convert
+OP_CONST_INT offset: 381
+OP_CONST_INT offset: 386
+OP_CONST_INT offset: 391
+OP_CONST_INT offset: 396
+SUB_OP_ONE_GAME_SCENE_RESIZE_DB offset: 401
+OP_MULTI_POP_INT offset: 411
+OP_CONST_SHORT offset: 414
+OP_CONST_SHORT offset: 417
+OP_CONST_INT offset: 420
+OP_CONST_INT offset: 425
+OP_CONST_INT offset: 430
+OP_CONTROL_CALL offset: 435
+OP_CONST_INT offset: 446
+OP_CONST_STRING offset: 451
+SUB_OP_ONE_GAME_SCENE_LOAD_NEW_IMAGE offset: 465
+OP_POP_OBJECT offset: 471
+OP_POP_INT offset: 472
+OP_CONST_INT offset: 473
+OP_CONST_STRING offset: 478
+SUB_OP_ONE_GAME_SCENE_LOAD_NEW_IMAGE offset: 492
+OP_POP_OBJECT offset: 498
+OP_POP_INT offset: 499
+OP_CONST_SHORT offset: 500
+OP_CONST_INT offset: 503
+OP_CONTROL_CALL offset: 508
+OP_CONST_SHORT offset: 519
+OP_CONST_INT offset: 522
+OP_CONTROL_CALL offset: 527
+OP_CONST_INT offset: 538
+OP_CONST_INT offset: 543
+OP_CONST_INT offset: 548
+OP_CONST_INT offset: 553
+OP_CONST_INT offset: 558
+OP_CONST_INT offset: 563
+SUB_OP_ONE_GAME_SCENE_LOAD_NEW_SPRITE offset: 568
+OP_MULTI_POP_INT offset: 582
+OP_CONST_INT offset: 585
+OP_CONST_INT offset: 590
+OP_CONST_INT offset: 595
+OP_CONST_INT offset: 600
+OP_CONST_INT offset: 605
+OP_CONST_INT offset: 610
+SUB_OP_ONE_GAME_SCENE_LOAD_NEW_SPRITE offset: 615
+OP_MULTI_POP_INT offset: 629
+OP_CONST_INT offset: 632
+OP_CONST_INT offset: 637
+SUB_OP_ONE_GAME_SCENE_RESIZE_LAYER offset: 642
+OP_MULTI_POP_INT offset: 648
+OP_CONST_INT offset: 651
+OP_CONST_INT offset: 656
+OP_CONST_INT offset: 661
+SUB_OP_ONE_GAME_SCENE_RESIZE_LAYER_ITEMS offset: 666
+OP_MULTI_POP_INT offset: 674
+OP_CONST_INT offset: 677
+OP_CONST_INT offset: 682
+OP_CONST_INT offset: 687
+SUB_OP_ONE_GAME_SCENE_RESIZE_LAYER_ITEMS offset: 692
+OP_MULTI_POP_INT offset: 700
+OP_CONST_INT offset: 703
+OP_CONST_INT offset: 708
+OP_CONST_INT offset: 713
+OP_CONST_INT offset: 718
+OP_CONST_INT offset: 723
+OP_CONST_INT offset: 728
+OP_CONST_INT offset: 733
+OP_CONTROL_CALL offset: 738
+OP_CONST_INT offset: 749
+OP_CONST_INT offset: 754
+OP_CONST_INT offset: 759
+OP_CONST_INT offset: 764
+OP_CONST_INT offset: 769
+OP_CONTROL_CALL offset: 774
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC offset: 785
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC offset: 807
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC offset: 829
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC offset: 851
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC offset: 873
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC offset: 895
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC offset: 917
+SUB_OP_ONE_GAME_SCENE_SET_ITEM_STATIC offset: 939
+OP_CONTROL_RET offset: 961
+End convert
+Adjusting labels for function
+Function: setScrollLayer = 1983 (7bf) 
+Start convert
+OP_CONST_INT offset: 962
+OP_CONST_INT offset: 967
+OP_MULTI_POP_INT offset: 972
+OP_CONST_INT offset: 975
+OP_CONST_INT offset: 980
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 985
+OP_MULTI_POP_INT offset: 995
+OP_CONST_INT offset: 998
+OP_CONST_INT offset: 1003
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 1008
+OP_MULTI_POP_INT offset: 1018
+OP_CONST_INT offset: 1021
+OP_CONST_INT offset: 1026
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 1031
+OP_MULTI_POP_INT offset: 1041
+OP_CONST_INT offset: 1044
+OP_CONST_INT offset: 1049
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 1054
+OP_MULTI_POP_INT offset: 1064
+OP_CONST_INT offset: 1067
+OP_CONST_INT offset: 1072
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 1077
+OP_MULTI_POP_INT offset: 1087
+OP_CONST_INT offset: 1090
+OP_CONST_INT offset: 1095
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 1100
+OP_MULTI_POP_INT offset: 1110
+OP_CONST_INT offset: 1113
+OP_CONST_INT offset: 1118
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 1123
+OP_MULTI_POP_INT offset: 1133
+OP_CONST_INT offset: 1136
+OP_CONST_INT offset: 1141
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 1146
+OP_MULTI_POP_INT offset: 1156
+OP_CONST_INT offset: 1159
+OP_CONST_INT offset: 1164
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 1169
+OP_MULTI_POP_INT offset: 1179
+OP_CONST_INT offset: 1182
+OP_CONST_INT offset: 1187
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 1192
+OP_MULTI_POP_INT offset: 1202
+OP_CONTROL_RET offset: 1205
+End convert
+Adjusting labels for function
+Function: onDie = 2227 (8b3) 
+Start convert
+SUB_OP_ONE_GAME_SET_RET_STATIC offset: 1206
+SUB_OP_ONE_GAME_SET_STATE_STATIC offset: 1212
+OP_CONTROL_RET offset: 1218
+End convert
+Adjusting labels for function
+Function: main = 2240 (8c0) 
+Entry point adjusted
+Start convert
+OP_CONST_INT offset: 1223
+OP_CONST_STRING offset: 1228
+OP_CONST_STRING offset: 1239
+OP_CONST_STRING offset: 1249
+OP_CONST_STRING offset: 1261
+OP_CONST_STRING offset: 1276
+OP_CONST_STRING offset: 1295
+OP_CONST_STRING offset: 1314
+OP_CONST_STRING offset: 1334
+OP_CONST_STRING offset: 1356
+OP_CONST_STRING offset: 1379
+OP_CONST_STRING offset: 1382
+OP_CONST_STRING offset: 1385
+OP_CONST_STRING offset: 1388
+OP_CONST_STRING offset: 1391
+OP_CONST_STRING offset: 1394
+OP_CONST_STRING offset: 1397
+OP_CONST_STRING offset: 1400
+OP_CONST_STRING offset: 1403
+OP_CONST_STRING offset: 1406
+OP_CONST_INT offset: 1409
+OP_CONST_INT offset: 1414
+OP_CONST_STRING offset: 1419
+OP_CONST_INT offset: 1422
+OP_CONST_LONG offset: 1427
+OP_POP_OBJECT offset: 1436
+OP_POP_INT offset: 1437
+OP_POP_LONG offset: 1438
+OP_SYSTEM_SHARED offset: 1439
+OP_ASSIGN_OBJECT offset: 1440
+OP_POP_OBJECT offset: 1445
+OP_CONST_INT offset: 1446
+OP_NEW_INT_ARRAY offset: 1451
+OP_POP_INT offset: 1455
+OP_CONST_INT offset: 1456
+OP_SUB_ASSIGN_INT offset: 1461
+OP_POP_INT offset: 1469
+OP_INC_INT offset: 1470
+OP_ASSIGN_OBJECT offset: 1474
+OP_POP_OBJECT offset: 1479
+OP_CONTROL_CALL offset: 1480
+OP_GET_RET offset: 1491
+OP_ASSIGN_OBJECT offset: 1493
+OP_POP_OBJECT offset: 1498
+OP_NEW_INT_ARRAY offset: 1499
+OP_ASSIGN_OBJECT offset: 1503
+OP_POP_OBJECT offset: 1508
+OP_CONST_INT offset: 1509
+OP_SUB_ASSIGN_INT offset: 1514
+OP_POP_INT offset: 1522
+OP_NEW_INT_ARRAY offset: 1523
+OP_ASSIGN_OBJECT offset: 1527
+OP_POP_OBJECT offset: 1532
+OP_CONST_INT offset: 1533
+OP_SUB_ASSIGN_INT offset: 1538
+OP_POP_INT offset: 1546
+OP_CONTROL_CALL offset: 1547
+OP_GET_RET offset: 1558
+OP_ASSIGN_OBJECT offset: 1560
+OP_POP_OBJECT offset: 1565
+OP_CONTROL_CALL offset: 1566
+OP_GET_RET offset: 1577
+OP_ASSIGN_OBJECT offset: 1579
+OP_POP_OBJECT offset: 1584
+OP_CONTROL_CALL offset: 1585
+OP_GET_RET offset: 1596
+OP_ASSIGN_OBJECT offset: 1598
+OP_POP_OBJECT offset: 1603
+OP_CONTROL_CALL offset: 1604
+OP_GET_RET offset: 1615
+OP_ASSIGN_OBJECT offset: 1617
+OP_POP_OBJECT offset: 1622
+SUB_OP_ONE_HT_PUT offset: 1623
+SUB_OP_ONE_HT_PUT offset: 1634
+SUB_OP_ONE_HT_PUT offset: 1645
+SUB_OP_ONE_HT_PUT offset: 1656
+SUB_OP_ONE_HT_PUT offset: 1667
+SUB_OP_ONE_HT_PUT offset: 1678
+SUB_OP_ONE_HT_PUT offset: 1689
+SUB_OP_ONE_HT_PUT offset: 1700
+OP_CONTROL_RET offset: 1711
+End convert
+Adjusting labels for function
+Function: playMusic = 2729 (aa9) 
+Start convert
+SUB_OP_ONE_GAME_LOAD_FROM_JAR offset: 1712
+OP_SIZE_OF offset: 1716
+OP_CONST_INT offset: 1720
+SUB_OP_ONE_GAME_NEW_MIDI offset: 1725
+SUB_OP_ONE_GAME_START_MIDI offset: 1733
+OP_CONTROL_RET offset: 1735
+End convert
+Adjusting labels for function
+Function: loadStackLengths = 2753 (ac1) 
+Start convert
+OP_CONST_INT offset: 1736
+OP_CONST_INT offset: 1741
+OP_CONST_STRING offset: 1746
+OP_POP_INT offset: 1749
+OP_POP_OBJECT offset: 1750
+OP_CONST_INT offset: 1751
+OP_NEW_INT_ARRAY offset: 1756
+OP_POP_INT offset: 1760
+OP_CONST_INT offset: 1761
+OP_SUB_ASSIGN_INT offset: 1766
+OP_POP_INT offset: 1774
+OP_INC_INT offset: 1775
+OP_CONST_INT offset: 1779
+OP_SUB_ASSIGN_INT offset: 1784
+OP_POP_INT offset: 1792
+OP_INC_INT offset: 1793
+OP_CONST_INT offset: 1797
+OP_SUB_ASSIGN_INT offset: 1802
+OP_POP_INT offset: 1810
+OP_INC_INT offset: 1811
+OP_CONST_INT offset: 1815
+OP_SUB_ASSIGN_INT offset: 1820
+OP_POP_INT offset: 1828
+OP_INC_INT offset: 1829
+OP_CONST_INT offset: 1833
+OP_SUB_ASSIGN_INT offset: 1838
+OP_POP_INT offset: 1846
+OP_INC_INT offset: 1847
+OP_CONST_INT offset: 1851
+OP_SUB_ASSIGN_INT offset: 1856
+OP_POP_INT offset: 1864
+OP_INC_INT offset: 1865
+OP_CONST_INT offset: 1869
+OP_SUB_ASSIGN_INT offset: 1874
+OP_POP_INT offset: 1882
+OP_INC_INT offset: 1883
+OP_CONST_INT offset: 1887
+OP_SUB_ASSIGN_INT offset: 1892
+OP_POP_INT offset: 1900
+OP_INC_INT offset: 1901
+OP_SET_RET offset: 1905
+OP_CONTROL_RET offset: 1910
+End convert
+Adjusting labels for function
+Function: adjustBlockProps = 2928 (b70) 
+Start convert
+SUB_OP_ONE_GAME_SET_BLOCK_COLL_OFFSET_STATIC offset: 1911
+OP_CONTROL_RET offset: 1925
+End convert
+Adjusting labels for function
+Function: loadBlockFrameWidths = 2943 (b7f) 
+Start convert
+OP_CONST_INT offset: 1926
+OP_CONST_INT offset: 1931
+OP_CONST_STRING offset: 1936
+OP_CONST_INT offset: 1939
+OP_POP_INT offset: 1944
+OP_POP_OBJECT offset: 1945
+OP_NEW_INT_ARRAY offset: 1946
+OP_CONST_INT offset: 1950
+OP_SUB_ASSIGN_INT offset: 1955
+OP_INC_INT offset: 1963
+OP_POP_INT offset: 1967
+OP_SET_RET offset: 1968
+OP_CONTROL_RET offset: 1973
+End convert
+Adjusting labels for function
+Function: postProcessSetup = 2991 (baf) 
+Start convert
+OP_CONST_STRING offset: 1974
+OP_CONTROL_CALL offset: 1998
+SUB_OP_ONE_GAME_SET_GAME_FLAGS_2_STATIC offset: 2009
+OP_CONTROL_CALL offset: 2015
+SUB_OP_ONE_GAME_ON_DIE_STATIC offset: 2026
+OP_CONTROL_RET offset: 2032
+End convert
+Adjusting labels for function
+Function: setNoneLayer = 3050 (bea) 
+Start convert
+OP_CONST_INT offset: 2033
+OP_CONST_INT offset: 2038
+OP_MULTI_POP_INT offset: 2043
+OP_CONST_INT offset: 2046
+OP_CONST_INT offset: 2051
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 2056
+OP_MULTI_POP_INT offset: 2066
+OP_CONST_INT offset: 2069
+OP_CONST_INT offset: 2074
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 2079
+OP_MULTI_POP_INT offset: 2089
+OP_CONTROL_RET offset: 2092
+End convert
+Adjusting labels for function
+Function: loadNewInterpolatorFromRes = 3110 (c26) 
+Start convert
+OP_SYSTEM_DIRECT_LOAD_RES_POSITION offset: 2093
+OP_SIZE_OF offset: 2097
+OP_DIVIDE_CONST_INT offset: 2101
+OP_CONST_INT offset: 2108
+SUB_OP_ONE_ARRAY_BYTE_TO_INT offset: 2113
+OP_ASSIGN_OBJECT offset: 2121
+OP_POP_OBJECT offset: 2126
+OP_MULTI_POP_INT offset: 2127
+OP_SYSTEM_DIRECT_LOAD_RES_POSITION offset: 2130
+OP_SIZE_OF offset: 2134
+OP_DIVIDE_CONST_INT offset: 2138
+OP_CONST_INT offset: 2145
+SUB_OP_ONE_ARRAY_BYTE_TO_INT offset: 2150
+OP_ASSIGN_OBJECT offset: 2158
+OP_POP_OBJECT offset: 2163
+OP_MULTI_POP_INT offset: 2164
+SUB_OP_ONE_GAME_SCENE_LOAD_NEW_INTERPOLATION_POINTS offset: 2167
+OP_CONTROL_RET offset: 2179
+End convert
+Adjusting labels for function
+Function: setStaticLayer = 3197 (c7d) 
+Start convert
+OP_CONST_INT offset: 2180
+OP_CONST_INT offset: 2185
+OP_MULTI_POP_INT offset: 2190
+OP_CONST_INT offset: 2193
+OP_CONST_INT offset: 2198
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 2203
+OP_MULTI_POP_INT offset: 2213
+OP_CONST_INT offset: 2216
+OP_CONST_INT offset: 2221
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 2226
+OP_MULTI_POP_INT offset: 2236
+OP_CONST_INT offset: 2239
+OP_CONST_INT offset: 2244
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 2249
+OP_MULTI_POP_INT offset: 2259
+OP_CONST_INT offset: 2262
+OP_CONST_INT offset: 2267
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 2272
+OP_MULTI_POP_INT offset: 2282
+OP_CONTROL_RET offset: 2285
+End convert
+Adjusting labels for function
+Function: setLinkedParallaxLayer = 3303 (ce7) 
+Start convert
+OP_CONST_INT offset: 2286
+OP_CONST_INT offset: 2291
+OP_MULTI_POP_INT offset: 2296
+OP_CONST_INT offset: 2299
+OP_CONST_INT offset: 2304
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 2309
+OP_MULTI_POP_INT offset: 2319
+OP_CONST_INT offset: 2322
+OP_CONST_INT offset: 2327
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 2332
+OP_MULTI_POP_INT offset: 2342
+OP_CONST_INT offset: 2345
+OP_CONST_INT offset: 2350
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 2355
+OP_MULTI_POP_INT offset: 2365
+OP_CONST_INT offset: 2368
+OP_CONST_INT offset: 2373
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 2378
+OP_MULTI_POP_INT offset: 2388
+OP_CONST_INT offset: 2391
+OP_CONST_INT offset: 2396
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 2401
+OP_MULTI_POP_INT offset: 2411
+OP_CONST_INT offset: 2414
+OP_CONST_INT offset: 2419
+SUB_OP_ONE_GAME_SCENE_SET_LAYER_PARAM offset: 2424
+OP_MULTI_POP_INT offset: 2434
+OP_CONTROL_RET offset: 2437
+End convert
+Adjusting labels for function
+Function: loadMapData = 3455 (d7f) 
+Start convert
+OP_CONST_INT offset: 2438
+OP_CONST_INT offset: 2443
+OP_CONST_INT offset: 2448
+OP_CONST_INT offset: 2453
+OP_CONST_INT offset: 2458
+OP_CONST_INT offset: 2463
+OP_CONST_STRING offset: 2468
+OP_CONST_STRING offset: 2471
+OP_CONST_INT offset: 2474
+OP_CONST_LONG offset: 2479
+OP_POP_OBJECT offset: 2488
+OP_POP_INT offset: 2489
+OP_POP_LONG offset: 2490
+OP_NEW_INT_ARRAY offset: 2491
+OP_ASSIGN_OBJECT offset: 2495
+OP_POP_OBJECT offset: 2500
+OP_SYSTEM_TIME offset: 2501
+OP_CONV_LONG_TO_INT offset: 2502
+OP_POP_LONG offset: 2505
+SUB_OP_ONE_GAME_RAND_SEED offset: 2506
+OP_POP_INT offset: 2510
+OP_PLACE_CONST_INT offset: 2511
+OP_SUB_ASSIGN_INT offset: 2518
+OP_PLACE_CONST_INT offset: 2526
+OP_GREATER_THAN_CONST_INT offset: 2533
+OP_CONTROL_JUMP_CONDITIONAL offset: 2540
+SUB_OP_ONE_GAME_RAND_MAX_STATIC offset: 2545
+OP_ASSIGN_INT offset: 2551
+OP_POP_INT offset: 2556
+OP_MULTIPLY_CONST_INT offset: 2557
+OP_ASSIGN_INT offset: 2564
+OP_POP_INT offset: 2569
+OP_CONTROL_JUMP offset: 2570
+OP_SHIFT_LEFT_INT offset: 2575
+OP_SUB_ASSIGN_INT offset: 2580
+OP_POP_INT offset: 2588
+OP_INC_INT offset: 2589
+OP_CONTROL_JUMP offset: 2593
+OP_SET_RET offset: 2598
+OP_CONTROL_RET offset: 2603
+End convert
+Adjusting labels for function
+Adjusting function calls
+Header start offset: 0
+Header size offset: 16
+Extension start offset: 16
+Extension size offset: 2
+Resource start offset: 18
+Resource size offset: 1003
+Function start offset: 1021
+Function size offset: 2600

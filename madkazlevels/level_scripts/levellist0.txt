@@ -1,0 +1,5 @@
+C:\code\trunk\cydMadKaz\level_scripts\compiled_level_scripts\z0m0.script
+C:\code\trunk\cydMadKaz\level_scripts\compiled_level_scripts\z0m1.script
+C:\code\trunk\cydMadKaz\level_scripts\compiled_level_scripts\z0m2.script
+C:\code\trunk\cydMadKaz\level_scripts\compiled_level_scripts\z0m3.script
+C:\code\trunk\cydMadKaz\level_scripts\compiled_level_scripts\z0m4.script

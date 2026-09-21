@@ -1,0 +1,45 @@
+#    Copyright 2007 CodeYield Development, Inc.  inquiries@codeyielddevelopment.com
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+.beginreses
+.resstring 0 "Stored Levels"
+.resstring 1 "Back"
+
+.resstring 100 "Options"
+.resstring 101 "Play"
+.resstring 102 "Details"
+.resstring 103 "Delete"
+.resstring 104 "Back"
+
+.resstring 200 "Level Details"
+.resstring 201 "Created On: "
+.resstring 202 "Stored On: "
+.resstring 203 "Short Name: "
+.resstring 204 "Long Name: "
+.resstring 205 "Authored by: "
+.resstring 206 "Comments: "
+.resstring 207 "Stored Size: "
+.resstring 208 "Left to go back"
+
+.resstring 300 "Delete"
+.resstring 301 "Are you sure that you want to delete this level?"
+.resstring 302 "Yes"
+.resstring 303 "No"
+.endreses
+
+.beginfunc main
+.endargs
+.endvars
+.endfunc

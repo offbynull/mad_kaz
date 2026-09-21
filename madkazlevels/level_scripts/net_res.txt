@@ -1,0 +1,50 @@
+#    Copyright 2007 CodeYield Development, Inc.  inquiries@codeyielddevelopment.com
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+.beginreses
+.resstring 0 "http://cydev.mobi/mk1/levels/main.mdat"
+
+.resstring 100 "Status"
+.resstring 101 "-Status-"
+.resstring 102 "--Status--"
+.resstring 103 "---Status---"
+.resstring 104 "Cancel"
+.resstring 105 "WAITING FOR NETWORK RESOURCES."
+.resstring 106 "ATTEMPTING TO DOWNLOAD DATA OVER NETWORK (MAY TAKE SEVERAL MINUTES)."
+.resstring 107 "FAILED, UNABLE TO MAKE CONNECTION. RETRYING... HIT CANCEL TO STOP RETRYING."
+.resstring 108 "UNABLE TO ESTABLISH CONNECTION. HIT CANCEL TO GO BACK TO THE MAIN MENU."
+.resstring 109 "INCOMING DATA IS UNRECOGNIZED. RETRYING... HIT CANCEL TO STOP."
+
+.resstring 200 "Message"
+.resstring 201 "Right To Continue"
+
+.resstring 300 "List"
+.resstring 301 "Main Menu"
+
+.resstring 400 "Created On: "
+.resstring 401 "Stored On: "
+.resstring 402 "Short Name: "
+.resstring 403 "Long Name: "
+.resstring 404 "Authored by: "
+.resstring 405 "Comments: "
+.resstring 406 "Stored Size: "
+.resstring 407 "Download and storage successful! You can now access this map! You can access custom maps by going to the main menu, selecting the custom maps option, and then selecting the browse maps option! The level details are posted below."
+.resstring 408 "A level with this name already exists on the phone. If you want to download this level again, delete this map and then come back here to grab it again. You can access custom maps by going to the main menu, selecting the custom maps option, and then selecting the browse maps option."
+.endreses
+
+.beginfunc main
+.endargs
+.endvars
+.endfunc

@@ -1,0 +1,250 @@
+#    Copyright 2007 CodeYield Development, Inc.  inquiries@codeyielddevelopment.com
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+.extreq 0
+
+.beginfunc postProcessSetup
+.endargs
+.endvars
+### set game flags here
+
+SUB_OP_ONE_GAME_SET_GAME_FLAGS_STATIC bn:1010011011
+SUB_OP_ONE_GAME_SET_GAME_FLAGS_2_STATIC bn:111111
+SUB_OP_ONE_GAME_SET_CAMERA_Y_STATIC 0
+SUB_OP_ONE_GAME_SET_PLAYER_Y_POS_STATIC 20
+SUB_OP_ONE_GAME_SET_PLAYER_X_RATE_STATIC 1 10
+
+OP_CONTROL_RET
+.endfunc
+
+
+
+
+.beginfunc sceneGraphicsSetup
+.endargs
+.endvars
+OP_CONTROL_RET
+.endfunc
+
+
+
+
+.beginfunc main
+.endargs
+.var imageIdCounter                 int 0
+.var floorCount                     int 0
+.var imageIdCount                   int 17
+.var walkImageName                  string "JAR:/kazwalk.png::1:" # "JAR:/kazwalk.png::1:GSCALE:560:50"
+.var blockImageName                 string "JAR:/block1.png::1:"
+.var imageIdString                  string "imageIds"
+.var mapDataString                  string "mapData"
+.var maxTimersString                string "maxTimers"
+.var stackLengthsString             string "stackLengths"
+.var spriteFrameWidthString         string "spriteFrameWidth"
+.var postSetupEntryPointString      string "postSetupEntryPoint"
+.var sceneSetupEntryPointString     string "sceneSetupEntryPoint"
+.var sharedHTContainer              string ""
+.var imageIdsArray                  string ""
+.var mapDataArray                   string ""
+.var maxTimersArray                 string ""
+.var stackLengthsArray              string ""
+.var postSetupEntryPointArray       string ""
+.var sceneSetupEntryPointArray      string ""
+.var spriteFrameWidthArray          string ""
+.var singleCount                    int 1
+.var mapFloorCount                  int 800
+.var floorCounter                   int 0
+.var floorNew                       int hx:00000001
+.var floorEmpty                     int hx:00000000
+.var floorFull                      int hx:11111111
+.var randShifter                    int 0
+.var stackLengthCounter             int 0
+.var timerCounter                   int 0
+.var LAST_OBJECT                    string ""
+.var LAST_INT                       int 0
+.var LAST_LONG                      long 0
+.endvars
+
+### LAST_* should be invalid after this
+OP_POP_OBJECT
+OP_POP_INT
+OP_POP_LONG
+
+### move shared into setup var
+OP_SYSTEM_SHARED
+OP_ASSIGN_OBJECT v:LAST_OBJECT v:sharedHTContainer
+OP_POP_OBJECT
+
+### setup imageIdArray and mapDataArray place into sharedHTContainer
+OP_NEW_OBJECT_ARRAY v:imageIdCount
+OP_ASSIGN_OBJECT v:LAST_OBJECT v:imageIdsArray
+OP_POP_OBJECT
+
+OP_NEW_INT_ARRAY v:mapFloorCount
+OP_ASSIGN_OBJECT v:LAST_OBJECT v:mapDataArray
+OP_POP_OBJECT
+
+
+### setup timers
+OP_CONST_INT     1
+OP_NEW_INT_ARRAY v:LAST_INT
+OP_POP_INT
+
+OP_CONST_INT     1
+OP_SUB_ASSIGN_INT v:LAST_OBJECT v:LAST_INT v:timerCounter
+OP_POP_INT
+OP_INC_INT v:timerCounter 1
+
+OP_ASSIGN_OBJECT v:LAST_OBJECT v:maxTimersArray
+OP_POP_OBJECT
+
+
+### setup stack lengths
+OP_CONST_INT     8
+OP_NEW_INT_ARRAY v:LAST_INT
+OP_POP_INT
+
+OP_CONST_INT     64
+OP_SUB_ASSIGN_INT v:LAST_OBJECT v:LAST_INT v:stackLengthCounter
+OP_POP_INT
+OP_INC_INT v:stackLengthCounter 1
+
+OP_CONST_INT     64
+OP_SUB_ASSIGN_INT v:LAST_OBJECT v:LAST_INT v:stackLengthCounter
+OP_POP_INT
+OP_INC_INT v:stackLengthCounter 1
+
+OP_CONST_INT     64
+OP_SUB_ASSIGN_INT v:LAST_OBJECT v:LAST_INT v:stackLengthCounter
+OP_POP_INT
+OP_INC_INT v:stackLengthCounter 1
+
+OP_CONST_INT     64
+OP_SUB_ASSIGN_INT v:LAST_OBJECT v:LAST_INT v:stackLengthCounter
+OP_POP_INT
+OP_INC_INT v:stackLengthCounter 1
+
+OP_CONST_INT     64
+OP_SUB_ASSIGN_INT v:LAST_OBJECT v:LAST_INT v:stackLengthCounter
+OP_POP_INT
+OP_INC_INT v:stackLengthCounter 1
+
+OP_CONST_INT     64
+OP_SUB_ASSIGN_INT v:LAST_OBJECT v:LAST_INT v:stackLengthCounter
+OP_POP_INT
+OP_INC_INT v:stackLengthCounter 1
+
+OP_CONST_INT     64
+OP_SUB_ASSIGN_INT v:LAST_OBJECT v:LAST_INT v:stackLengthCounter
+OP_POP_INT
+OP_INC_INT v:stackLengthCounter 1
+
+OP_CONST_INT     64
+OP_SUB_ASSIGN_INT v:LAST_OBJECT v:LAST_INT v:stackLengthCounter
+OP_POP_INT
+OP_INC_INT v:stackLengthCounter 1
+
+OP_ASSIGN_OBJECT v:LAST_OBJECT v:stackLengthsArray
+OP_POP_OBJECT
+
+# post process func
+OP_NEW_INT_ARRAY v:singleCount
+OP_ASSIGN_OBJECT v:LAST_OBJECT v:postSetupEntryPointArray
+OP_POP_OBJECT
+
+OP_CONST_INT f:postProcessSetup
+OP_SUB_ASSIGN_INT v:postSetupEntryPointArray v:LAST_INT v:imageIdCounter
+OP_POP_INT
+
+# scene setup func
+OP_NEW_INT_ARRAY v:singleCount
+OP_ASSIGN_OBJECT v:LAST_OBJECT v:sceneSetupEntryPointArray
+OP_POP_OBJECT
+
+OP_CONST_INT f:sceneGraphicsSetup
+OP_SUB_ASSIGN_INT v:sceneSetupEntryPointArray v:LAST_INT v:imageIdCounter
+OP_POP_INT
+
+SUB_OP_ONE_HT_PUT v:sharedHTContainer v:imageIdString v:imageIdsArray
+SUB_OP_ONE_HT_PUT v:sharedHTContainer v:mapDataString v:mapDataArray
+SUB_OP_ONE_HT_PUT v:sharedHTContainer v:maxTimersString v:maxTimersArray
+SUB_OP_ONE_HT_PUT v:sharedHTContainer v:stackLengthsString v:stackLengthsArray
+SUB_OP_ONE_HT_PUT v:sharedHTContainer v:postSetupEntryPointString v:postSetupEntryPointArray
+SUB_OP_ONE_HT_PUT v:sharedHTContainer v:sceneSetupEntryPointString v:sceneSetupEntryPointArray
+
+
+OP_SUB_ASSIGN_OBJECT v:imageIdsArray v:walkImageName v:imageIdCounter
+OP_INC_INT v:imageIdCounter 1
+OP_SUB_ASSIGN_OBJECT v:imageIdsArray v:blockImageName v:imageIdCounter
+
+
+### fill in fake mapData
+
+# set seed
+OP_SYSTEM_TIME
+OP_CONV_LONG_TO_INT v:LAST_LONG
+OP_POP_LONG
+SUB_OP_ONE_GAME_RAND_SEED v:LAST_INT
+OP_POP_INT
+
+# set top and bottom tiles
+OP_PLACE_CONST_INT v:floorCounter 0
+OP_SUB_ASSIGN_INT v:mapDataArray v:floorFull v:floorCounter
+OP_PLACE_CONST_INT v:floorCounter 799
+OP_SUB_ASSIGN_INT v:mapDataArray v:floorFull v:floorCounter
+
+# initalize counter to 2
+OP_PLACE_CONST_INT v:floorCounter 0
+
+.label whileLessThan799
+OP_GREATER_THAN_CONST_INT v:floorCounter 799
+OP_CONTROL_JUMP_CONDITIONAL l:whileLessThan799End
+
+# create random shift amount
+SUB_OP_ONE_GAME_RAND_MAX_STATIC 8
+OP_ASSIGN_INT v:LAST_INT v:randShifter
+OP_POP_INT
+
+OP_LESS_THAN_CONST_INT v:randShifter 0
+OP_CONTROL_JUMP_CONDITIONAL l:makePositive
+OP_CONTROL_JUMP l:staySame
+.label makePositive
+OP_MULTIPLY_CONST_INT v:randShifter hx:00000004
+OP_ASSIGN_INT v:LAST_INT v:randShifter
+OP_POP_INT
+OP_CONTROL_JUMP l:done
+.label staySame
+OP_MULTIPLY_CONST_INT v:randShifter hx:FFFFFFFC
+OP_ASSIGN_INT v:LAST_INT v:randShifter
+OP_POP_INT
+OP_CONTROL_JUMP l:done
+
+.label done
+
+# apply shift and place
+OP_SHIFT_LEFT_INT v:randShifter v:floorNew
+OP_SUB_ASSIGN_INT v:mapDataArray v:LAST_INT v:floorCounter
+OP_POP_INT
+
+# move up floor counter for next iteration
+OP_INC_INT v:floorCounter 2
+
+OP_CONTROL_JUMP l:whileLessThan799
+.label whileLessThan799End
+
+OP_CONTROL_RET
+
+
+.endfunc

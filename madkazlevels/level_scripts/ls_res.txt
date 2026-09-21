@@ -1,0 +1,192 @@
+#    Copyright 2007 CodeYield Development, Inc.  inquiries@codeyielddevelopment.com
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+.beginreses
+.resstring 0 "6"
+.resdump   1 "C:\\code\\trunk\\cydMadKaz\\level_scripts\\selectzone.png"
+.resdump   2 "C:\\code\\trunk\\cydMadKaz\\level_scripts\\selectlevel.png"
+
+.resstring 10 "Zones"
+.resstring 11 "Help"
+.resstring 12 "Back"
+
+.resstring 20 "Zone Details"
+.resstring 21 "Play"
+.resstring 22 "Back"
+
+.resstring 50 "Game Mode"
+.resstring 51 "Normal"
+.resstring 52 "Black out"
+.resstring 53 "Stalker"
+.resstring 54 "Fast Forward"
+.resstring 55 "Time Warp"
+.resstring 56 "Super Jump"
+.resstring 57 "Ultra Shake"
+.resstring 58 "Psychotic"
+
+.resstring 70 "Info"
+.resstring 71 " mode has been unlocked for this zone. Great job! Now that you've completed this zone in this mode, you can play any level within this zone for this mode at any time."
+.resstring 72 "All modes for this zone have been unlocked. Excellent work!"
+.resstring 73 "You couldn't complete all levels within this zone! Better luck next time!"
+.resstring 74 "Ok"
+
+.resstring 80 "Locked Mode"
+.resstring 81 "This mode is locked! You can unlock this mode by completing this zone in all prior modes!"
+.resstring 82 "Ok"
+
+.resstring 90 "Levels"
+
+.resstring 16999 "Left to close"
+.resstring 17000 "Help"
+.resstring 17001 ""
+.resstring 17002 "How to play"
+.resstring 17003 "-----------"
+.resstring 17004 ""
+.resstring 17005 "Playing the game is easy. For starters, you can select any of the 7 zones to play. However, if it's your first time playing the game, you should start with the intro zone!"
+.resstring 17006 ""
+.resstring 17007 "Each zone has multiple levels with unique style and gameplay. If you fail even one of the zone's levels, you have to restart from the beginning!"
+.resstring 17008 ""
+.resstring 17009 "Each zone can be played in one of many different modes. However, these modes have to be unlocked for each zone before they can be played! To unlock a zone, you have to finish that zone in all prior modes!"
+.resstring 17010 ""
+.resstring 17011 "Mode Overview"
+.resstring 17012 "-------------"
+.resstring 17013 ""
+.resstring 17014 "[Normal]"
+.resstring 17015 ""
+.resstring 17016 "Plays the game without any effects."
+.resstring 17017 ""
+.resstring 17018 "[Black out]"
+.resstring 17019 ""
+.resstring 17020 "Lowers the lighting in each level so that it's harder to see what's going on."
+.resstring 17021 ""
+.resstring 17022 "[Stalker]"
+.resstring 17023 ""
+.resstring 17024 "Makes you play the game with infared view. This mode makes zones that take place in heated enviroments difficult to play."
+.resstring 17025 ""
+.resstring 17026 "[Fast Forward]"
+.resstring 17027 ""
+.resstring 17028 "Makes you run very fast."
+.resstring 17029 ""
+.resstring 17030 "[Time Warp]"
+.resstring 17031 ""
+.resstring 17032 "Applies random warps and time flucuations while you're playing the game."
+.resstring 17033 ""
+.resstring 17034 "[Super Jump]"
+.resstring 17035 ""
+.resstring 17036 "Increases your jumping power by a factor of 10."
+.resstring 17037 ""
+.resstring 17038 "[Ultra Shake]"
+.resstring 17039 ""
+.resstring 17040 "Constant shaking of the enviroment with random intensities."
+.resstring 17041 ""
+.resstring 17042 "[Psychotic]"
+.resstring 17043 ""
+.resstring 17044 "A little bit of all the prior modes combined into one, along with randomized blackouts."
+.resstring 17045 ""
+
+.resstring 30000 "You have failed! Better luck next time!"
+
+.resstring 100 "Intro"
+.resstring 101 "Enter this intro zone to learn the basics of the game!"
+.resstring 102 "Free Drop"
+.resstring 103 "You must drop to the bottom of the level. You can control your movements by using the left and right! Good luck!"
+.resstring 104 "Free Climb"
+.resstring 105 "Good job! Now you must reach the top of the level. Hold 7 to power up and release it to jump. Just like the previous level, you can control your movements by using the left and right! You can also power up while you're in the air! Good luck!"
+.resstring 106 "Limited Climb"
+.resstring 107 "Good job! Now you must reach the top of the level again! You have no control over left or right movements this time, and you can't powerup for jumps when you're in the air... so think before you jump! Good luck!"
+.resstring 108 "Limited Climb 2"
+.resstring 109 "Good job! Now you must reach the top of the level for a third time! In this mission, you cannot fall out of view! If you do, then you'll fail. You have no control over left or right movements this time, so think before you jump! Good luck!"
+.resstring 110 "Hard Drop"
+.resstring 111 "Good job! You must reach the bottom of the level. In this mission, if you fall behind then you fail! Good luck!"
+
+.resstring 200 "Homework"
+.resstring 201 "While doing your afterschool homework, you were sucked into a vortex and entered the homework dimension! Complete all levels in the homework zone to finish off your homework... WITH AVENGEANCE!"
+.resstring 202 "Homework Intro"
+.resstring 203 "You have just entered the homework zone! There are three different block types in the homework zone, each one of them do something different. Experiment with the blocks in the homework zone to figure out what each of them do. Climb to the top to continue on to the next level. Good luck!"
+.resstring 204 "Sunset City"
+.resstring 205 "Excellent work! Now that you're familiar with what each block does, escape the city by climbing to the top of the level before the sun sets. Good luck!"
+.resstring 206 "Bomby Sunset 1"
+.resstring 207 "Great work! In the process of escaping the city, you noticed that a giant nuke just got let go! Get down to the bottom to warn the residents before the nuke destroys the city! If you're dropping fast enough, colliding with a block will only slow you down. Use that knowledge to your advantage! Good luck!"
+.resstring 208 "Bomby Sunset 2"
+.resstring 209 "Great work! The bomb is still falling. This time the blocks have more stopping power, so be vigilant in avoiding those blocks! Good luck!"
+.resstring 210 "Bomby Sunset 3"
+.resstring 211 "Great work! You're almost there. The blocks will stop you in your tracks this time! Get to the city before it turns to radioactive vapor! Good luck!"
+.resstring 212 "The Great Escape"
+.resstring 213 "Great work! This is the last level. A giant stickman is coming towards you! Jump on the top block to shoot math waves at him! The faster you're falling when you land on the block, the more it'll push him away! Keep the enemy boss away for atleast 40 seconds to escape! Good luck!"
+
+.resstring 300 "Hippie"
+.resstring 301 "After escaping the homework zone successfully, you returned back to Earth only to find out that it has been taken over by hippies! The hippies are powerful, they will try to test your resolve with their hippie peace-pipe hallucinations. Complete all levels in this hippie zone to extingush the hippie menace! DO NOT PLAY THIS ZONE IF YOU ARE PRONE TO HAVING SEIZURES OR OTHER RELATED MEDICAL ISSUES!!!!"
+.resstring 302 "Psychedelic"
+.resstring 303 "You're now in the hippie realm. Hippies use their power of colors and hallucinations to confuse and control non-hippies. Climb to the top of the level while withstanding an onslaught of psychedelic hippie colors. Good luck!"
+.resstring 304 "Confusion 1"
+.resstring 305 "Excellent work! The hippies are trying to confuse you in your trek to bring them to justice! In this climb level, everytime you stand on a block of a certain color, the background of the level will change to that color! Good luck!"
+.resstring 306 "Confusion 2"
+.resstring 307 "Excellent work! The same concept applies in this level aswell, but there are only 4 different colors this time! Good luck!"
+.resstring 308 "Confusion 3"
+.resstring 309 "Excellent work! The same concept applies in this level aswell, but there are only 3 different colors this time! Good luck!"
+.resstring 310 "Confusion 4"
+.resstring 311 "Excellent work! The same concept applies in this level aswell, but there are only 2 different colors this time! Good luck!"
+.resstring 312 "Confusion 5"
+.resstring 313 "Excellent work! The same concept applies in this level aswell, but there are only 2 different colors this time! This time, however, if you fall then you fail! Good luck!"
+.resstring 314 "Flashbacks"
+.resstring 315 "Excellent work! The hippies have used their powers to induce mental flashbacks while you're climbing! Don't be phased by these flashbacks, continue forward! Good luck!"
+.resstring 316 "Checkers"
+.resstring 317 "Excellent work! The hippies are getting irritated with you. They are trying to distort your perceptions! Make it to the top of the checkers room! Good luck!"
+.resstring 318 "Day Dreams"
+.resstring 319 "Excellent work! The hippies have gotten into your mind and have started to make you day dream about the stepping blocks you're jumping on to get to the top! Good luck!"
+
+.resstring 400 "Time Trials"
+.resstring 401 "Complete all time trials within the amount of time provided to win the gold!"
+.resstring 402 "200 Floor Sprint"
+.resstring 403 "Complete the 200 floor sprint in 2 minutes and 56 seconds! You can't power up while hovering and you have no control over your left and right movements, so try to use the blocks to your advantage. Good luck!"
+.resstring 404 "400 Floor Sprint"
+.resstring 405 "Excellent Work! Complete the 400 floor sprint in 2 minutes and 56 seconds! You can't power up while hovering and you have no control over your left and right movements, so try to use the blocks to your advantage. Good luck!"
+.resstring 406 "800 Floor Sprint"
+.resstring 407 "Excellent Work! Complete the 600 floor sprint in 2 minutes and 56 seconds! You can't power up while hovering and you have no control over your left and right movements, so try to use the blocks to your advantage. Good luck!"
+.resstring 408 "1600 Floor Sprint"
+.resstring 409 "Excellent Work! Complete the 1600 floor sprint in 2 minutes and 56 seconds! You can't power up while hovering and you have no control over your left and right movements, so try to use the blocks to your advantage. Good luck!"
+.resstring 410 "2000 Floor Sprint"
+.resstring 411 "Excellent Work! Complete the 2000 floor sprint in 2 minutes and 56 seconds! You can't power up while hovering and you have no control over your left and right movements, so try to use the blocks to your advantage. Good luck!"
+
+.resstring 500 "Giagantor"
+.resstring 501 "After successfully defeating the time trials, hippies abducted you and force fed you some of their hippie juice! Now you've turned into a giant monster who's terrorizing the city! Escape capture at all costs!"
+.resstring 502 "Tippy Toe 1"
+.resstring 503 "Drop down from the building without causing too much of a ruckus. If you fall too fast onto a block, you'll bring too much attention to yourself and get captured! Good luck!"
+.resstring 504 "Tippy Toe 2"
+.resstring 505 "Great work! Continue dropping down from the building without causing too much of a ruckus. Good luck!"
+.resstring 506 "Tippy Toe 3"
+.resstring 507 "Great work! Continue dropping down from the building without causing too much of a ruckus. Good luck!"
+.resstring 508 "Inner Tippy Toe 1"
+.resstring 509 "Great work! The authorities have spotted you! In a panic you broke into a building and began your rampage! Continue dropping down from the building, the building can't suppport your weight, so don't drop too fast! Remember that you're viewing the building from the outside, so use the shakes when you drop to see where hidden blocks are! Good luck!"
+.resstring 510 "Inner Tippy Toe 2"
+.resstring 511 "Great work! Continue dropping down from the building without causing too much of a ruckus. Good luck!"
+.resstring 512 "Climb to Space 1"
+.resstring 513 "Great work! You must now climb to space to escape capture! The authorities are trying to shoot you down with their beams, so stay away from the bright beams! You can only get hit by the beams 4 times before you die, so when the screen starts shaking make sure to be in the middle! Good luck!"
+.resstring 514 "Climb to Space 2"
+.resstring 515 "Great work! The authorities have stepped up their efforts! The beams will converge on you faster this time, and you can only get hit 3 times! Good luck!"
+.resstring 516 "Climb to Space 3"
+.resstring 517 "Great work! The authorities have stepped up their efforts even more! The beams will converge on you even faster this time, and you cannot get hit by the beam at all! Good luck!"
+
+.resstring 600 "Author Zone"
+.resstring 601 "This zone has photos of some who helped out in making the game!"
+.resstring 602 "Authors and Friends"
+.resstring 603 "Picture will switch automatically every 15 secs. When all the pictures have been viewed, the level will end. Here's a list of people who will be displayed (in order) -- Kasra F (Programming, level programming, level design, and minor art work), Mykola D (Major art work, and menu header images), Xonic The Fox (Major game music), Farzad and Farshad M (Friends), James \"Ghaleon\" P (Friend), and Ed \"Eduardo\" L (Friend)"
+
+.endreses
+
+.beginfunc main
+.endargs
+.endvars
+.endfunc
