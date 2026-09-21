@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<browsable>
+  <section name="main" text="BACK">
+    <message>
+      <line></line>
+      <line>Welcome to the level DB. Created with the ALPHA VERSION of browsable content creator.</line>
+      <line></line>
+      <line>Items prefixed with (L) are levels.</line>
+      <line></line>
+      <line>Items prefixed with (M) will take you to a new section.</line>
+      <line></line>
+      <line>Selecting back will take you to the main menu!</line>
+    </message>
+    <links>
+      <link name="blank" />
+      <level location="prac_free.script" createtime="2007-07-07" shortname="fake_free" longname="fake free fall map, already provided in basic practice mode" author="kaz" comments="none"/>
+      <level location="space_quest.script" createtime="2007-07-07" shortname="space_quest" longname="Space Quest: Climb to earth" author="kaz" comments="Climb up until you see earth!"/>
+    </links>
+  </section>
+  
+  <section name="blank" text="FAKE SECTION">
+    <message>
+      <line></line>
+      <line>This section is blank. Use the only item to go back to the original menu</line>
+    </message>
+    <links>
+      <link name="main" />
+    </links>
+  </section>
+</browsable>
