@@ -1,0 +1,9 @@
+MIDlet-1: Mad Kaz,/icon.png,game.cydGame
+MIDlet-Icon: /icon.png
+MIDlet-Jar-Size: 189586
+MIDlet-Jar-URL: cydMadKaz.jar
+MIDlet-Name: Mad Kaz
+MIDlet-Vendor: CodeYield Development Inc.
+MIDlet-Version: 1.0
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Profile: MIDP-2.0
