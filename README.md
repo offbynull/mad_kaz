@@ -1,6 +1,11 @@
 # Mad Kaz
 
-**Description**: Submission to the 2007 MOTODEV gamedev challenge. Included are the SDK tools (alpha), level scripts (beta), and the game engine (beta). Due to the time contraints, there aren't many comments in the code. Also, in an effort to increase the framerate, some of the code has been restructured and manually inlined (spaghetti code). The engine was designed to run on the Motorola K1, but has also been tested on many other phones that have a screen width of 176 pixels (e.g. Samsung SGH-D520).
+> [!IMPORTANT]
+> Mad Kaz was a game I created for the [2007 MOTODEV Game Developer Challenge](https://www.pocketgamer.com/motodev-game-dev-challenge/). The game was heavily inspired by [NS-SHAFT](https://www.nagi-p.com/v1/eng/nsshaft.html) and [NS-TOWER](https://www.nagi-p.com/v1/eng/nstower.html), but re-imagined into levels and zones that each had their own unique twists. Those levels were built on top of a custom VM made specifically for the game, effectively making it a programmable game platform. Players could pull in additional levels either by sharing them with each other over Bluetooth or by downloading them over the Internet.
+>
+> Back then, such features weren't typical for mobile games. Most games hardcoded their game logic and assets, with no way to add content after release.
+
+**Description**: Submission to the [2007 MOTODEV Game Developer Challenge](https://www.pocketgamer.com/motodev-game-dev-challenge/). Included are the SDK tools (alpha), level scripts (beta), and the game engine (beta). Due to the time contraints, there aren't many comments in the code. Also, in an effort to increase the framerate, some of the code has been restructured and manually inlined (spaghetti code). The engine was designed to run on the Motorola K1, but has also been tested on many other phones that have a screen width of 176 pixels (e.g. Samsung SGH-D520).
 
 * /madkaz contains the game engine.
 * /madkazsdk contains the SDK tools (Assembler, HersheyFontConverter, BrowsableStructureCreator, DownloadableLevelWrapper, and IndexedCombiner).
