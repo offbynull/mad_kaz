@@ -1,7 +1,7 @@
 # Mad Kaz
 
 > [!IMPORTANT]
-> Mad Kaz was a game I created for the [2007 MOTODEV Game Developer Challenge](https://www.pocketgamer.com/motodev-game-dev-challenge/). The game was heavily inspired by [NS-SHAFT](https://www.nagi-p.com/v1/eng/nsshaft.html) and [NS-TOWER](https://www.nagi-p.com/v1/eng/nstower.html), but re-imagined into levels and zones that each had their own unique twists. Those levels were built on top of a custom VM made specifically for the game, effectively making it a programmable game platform. Players could pull in additional levels either by sharing them with each other over Bluetooth or by downloading them over the Internet.
+> Mad Kaz was a game I created for the [2007 MOTODEV Game Developer Challenge](https://www.pocketgamer.com/motodev-game-dev-challenge/). The game was heavily inspired by [NS-SHAFT](https://www.nagi-p.com/v1/eng/nsshaft.html) and [NS-TOWER](https://www.nagi-p.com/v1/eng/nstower.html), but re-imagined into levels and zones that each had their own unique twists. Those levels were built on top of a custom VM made specifically for the game, effectively making Mad Kaz a programmable game platform. Players could pull in additional levels either by sharing them with each other over Bluetooth or by downloading them over the Internet.
 >
 > Back then, such features weren't typical for mobile games. Most games hardcoded their game logic and assets, with no way to add content after release.
 
