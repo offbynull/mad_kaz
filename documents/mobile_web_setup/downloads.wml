@@ -1,0 +1,22 @@
+<wml>
+<card id="cardid1" title="CYD Inc.">
+<strong>CYD Downloads</strong>
+<br/>
+<br/>
+<a href="downloads/cydMadKaz.jad">Mad Kaz</a><br/>
+<a href="downloads/udpet.jad">UDP Echo Test</a><br/>
+<a href="downloads/btt.jad">Bluetooth Test</a><br/>
+<a href="downloads/mat.jad">Multiaudio Test</a><br/>
+<a href="downloads/ast.jad">Adv Sprite Test</a><br/>
+<a href="downloads/mfl.jad">Moto Fun Light Test</a><br/>
+<a href="downloads/gmp.jad">Multi Press Test</a><br/>
+<a href="downloads/cat.jad">Copy Area Test</a><br/>
+<a href="downloads/mt.jad">Menu Test</a><br/>
+<a href="downloads/midipack.jad">MIDI Test</a><br/>
+<a href="downloads/logo.jad">Logo Test</a><br/>
+<a href="downloads/ge.jad">GE Automation Test</a><br/>
+<a href="downloads/gm.jad">Graphics Manager Test</a><br/>
+<a href="downloads/wmdyntest.jad">Dynamic Mixer Test</a><br/>
+<a href="downloads/bm.jad">Benchmark Tool</a><br/>
+</card>
+</wml>

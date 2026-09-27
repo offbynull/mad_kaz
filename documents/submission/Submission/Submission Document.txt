@@ -1,0 +1,151 @@
+Copyright 2007 CodeYield Development, Inc. All Rights Reserved.
+
+
+
+Table of contents
+-----------------
+1 Name, Address, Contact Information
+2 Application Name
+3 Application Description
+4 Entrant Biography
+5 User Instructions
+  5.1 Game Play
+  5.2 Custom Maps
+  5.3 Level List
+  5.4 Mode List
+  5.5 Unlocking All Levels and Modes (Cheat)
+  5.6 Recommended Play List for Judges
+
+
+
+1 Name, Address, Contact Information
+------------------------------------
+CodeYield Development Inc.
+P.O. Box 22015
+Richmond, BC  V7C-5W5
+
+Contact Person: Kasra Faghihi
+Phone: 778.863.1204
+Fax: 866.844.7941
+E-Mail: kasraf@codeyielddevelopment.com
+
+
+
+2 Application Name
+------------------
+Mad Kaz
+
+
+
+3 Application Description
+-------------------------
+Mad Kaz is a vertical platformer where you lead the title character through a series of unique levels, each crazier than the last. Mad Kaz features six zones with between four to ten levels per zone, and eight different game modes.  Built on top of a unique engine, Mad Kaz allows users to create their own levels with customized game play, cinematics, music, and style.  Levels can be uploaded onto phones via either Bluetooth or the Internet. The source code packages for the engine, levels, and SDK can be found on the CodeYield Development site.
+
+
+
+4 Entrant Biography
+-------------------
+Mad Kaz was created by CodeYield Development, Inc.  founder Kasra Faghihi (age 22) who designed the engine, levels, and tools.  CodeYield Development is located in British Columbia, Canada. The majority of the pixel-art was created by Mykola Dosenko (age 22) from Kiev, Ukraine.  The in-game music was composed by "Xonic the Fox" (age 19) of Norway.
+
+
+
+5 User Instructions
+-------------------
+When you first load the game you'll be presented with a three screen initial configuration. Once this is finished, and on any subsequent loads, you will be presented with the main menu. Menu selection will be controlled primarily via Up, Down, and 7. Sometimes you may need to use the Left or Right key to move forward or back, although the interface will prompt you whenever this is required.
+
+PLAY – will lead to zone, level, and mode selection. Completing all of the levels within a zone will unlock new modes for that level.
+RESET – will erase saved progress.
+PRACTICE – allows you to practice in a few very basic practice levels.
+CUSTOM MAPS – will allow for the obtaining and sharing of custom maps.
+SETTINGS – open the initial configuration again.
+HELP – will provide information about the various menu options.
+ABOUT – will provide copyright information.
+CREDITS – will display a comprehensive list of game credits.
+EXIT – will quit the game.
+
+
+5.1 Game Play
+-------------
+Game play is controlled by Left, Right, and 7.  Left and Right change direction if the level allows for direction changing.  To jump hold 7, which will power-up your jump.  The power meter will cycle, forcing you to time when you press the jump key with the desired power of your jump.  The game will allow you to power-up or change direction in mid-air, but levels can restrict this ability.  Any restrictions on your movement will be listed in the level description.
+
+
+5.2 Custom Maps
+---------------
+Customized maps can be downloaded from other handhelds using Bluetooth, or through the Internet.   To download new maps go to CUSTOM MAPS > SHARE MAPS.
+If you would like to download maps via Bluetooth select BLUETOOTH P2P.  This will provide you with a list of custom maps on the phone that you connect to.
+If you would like to download maps via the Internet select INTERNET.  The Internet options will have a number of sections with maps and descriptions.
+You can share maps via Bluetooth by going to CUSTOM MAPS.  If you would like to have custom maps available via the Internet you will need to download the “Mad Kaz Browsable Structure Creator” and contact CodeYield so your site can be linked.
+
+
+5.3 Level List
+--------------
+Intro Zone
+  1.Free Drop
+  2.Free Climb
+  3.Limited Climb
+  4.Limited Climb 2
+  5.Hard Drop
+Homework Zone
+  1.Homework Intro
+  2.Sunset City
+  3.Bomby Sunset 1
+  4.Bomby Sunset 2
+  5.Bomby Sunset 3
+  6.The Great Escape
+Hippie Zone
+  1.Psychedelic
+  2.Confusion 1
+  3.Confusion 2
+  4.Confusion 3
+  5.Confusion 4
+  6.Confusion 5
+  7.Flashbacks
+  8.Checkers
+  9.Day Dreams
+Time Trials Zone
+  1.200 Floor Sprint
+  2.400 Floor Sprint
+  3.800 Floor Sprint
+  4.1600 Floor Sprint
+  5.2000 Floor Sprint
+Giagantor Zone
+  1.Tippy Toe 1
+  2.Tippy Toe 2
+  3.Tippy Toe 3
+  4.Inner Tippy Toe 1
+  5.Inner Tippy Toe 2
+  6.Climb To Space 1
+  7.Climb To Space 2
+  8.Climb To Space 3
+Author Zone
+  1.Authors and Friends
+
+
+5.4 Mode List
+-------------
+NORMAL – No effects.
+BLACK OUT – Lowers the lighting in each level so that it's harder to see what's going on.
+STALKER – Makes you play the game with infared view.
+FAST FORWARD – Makes you run very fast.
+TIME WARP – Applies random warps and time fluctuations while you're playing the game.
+SUPER JUMP – Increases your jumping power by a factor of 10.
+ULTRA SHAKE – Constant shaking of the environment with random intensities.
+PSYCHOTIC – A little bit of all the prior modes combined into one, along with randomized blackouts.
+
+
+5.5 Unlocking All Levels and Modes (Cheat)
+------------------------------------------
+All levels, zones, and modes can be unlocked by selecting PLAY and then tapping Right until the background turns red.
+
+
+5.6 Recommended Play List for Judges
+------------------------------------
+To easily access these levels, apply the unlock cheat (section 5.5). There are also custom levels available for download via the Internet (section 5.2)
+
+Intro        / Level 5 (Hard Drop)           / Normal
+Homework     / Level 6 (The Great Escape)    / Normal
+Hippie       / Level 5 (Confusion 4)         / Normal
+Time Trials  / Level 1 (200 Floor Sprint)    / Normal
+Giagantor    / Level 1 (Tippy Toe 1)         / Normal
+Giagantor    / Level 6 (Climb To Space 1)    / Normal
+Author       / Level 1(Authors and Friends)  / Normal

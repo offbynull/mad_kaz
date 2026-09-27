@@ -1,0 +1,1 @@
+ftp -s:FORCE_SEND_SCRIPT.txt cydev.mobi
